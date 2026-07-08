@@ -1,0 +1,8 @@
+*.bak
+*.log
+.env
+.env.*
+*.secret
+audit.jsonl
+.policy-unlock
+.destructive-unlock
