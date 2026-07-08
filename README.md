@@ -1,4 +1,6 @@
-# Enterprise Multi-Agent Protocol
+# SeniorITa
+
+> **The Enterprise Multi-Agent Protocol** — turnkey governance & adoption kit for AI coding agents in critical infrastructure.
 
 Turnkey **governance protocol** and **adoption kit** for teams deploying [Claude Code](https://claude.ai/code) as an autonomous DevOps agent inside enterprises with critical-infrastructure requirements.
 
@@ -32,8 +34,8 @@ Turnkey **governance protocol** and **adoption kit** for teams deploying [Claude
 ## 5-minute install
 
 ```bash
-git clone https://github.com/Smncri89/enterprise-multi-agent-protocol.git
-cd enterprise-multi-agent-protocol
+git clone https://github.com/Smncri89/SeniorITa.git
+cd SeniorITa
 bash scripts/install.sh --dry-run   # preview
 bash scripts/install.sh             # apply
 ```

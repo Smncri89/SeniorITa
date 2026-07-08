@@ -28,8 +28,8 @@ Optional but recommended:
 ### Fastest path (single user)
 
 ```bash
-git clone https://github.com/Smncri89/enterprise-multi-agent-protocol.git
-cd enterprise-multi-agent-protocol
+git clone https://github.com/Smncri89/SeniorITa.git
+cd SeniorITa
 bash scripts/install.sh --dry-run   # preview what will change
 bash scripts/install.sh             # actually install
 ```

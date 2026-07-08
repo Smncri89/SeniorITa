@@ -14,7 +14,7 @@ prior_reviews:
   - {reviewer: Internal, round: 1, version_reviewed: v2}
 ---
 
-# Enterprise Multi-Agent Protocol v4 — External Review Package
+# SeniorITa — Enterprise Multi-Agent Protocol v4 — External Review Package
 
 > **Purpose.** Sanitized snapshot of the internal operational protocol governing an AI
 > coding agent in a high-criticality S.p.A. environment. **v4 introduces structural
