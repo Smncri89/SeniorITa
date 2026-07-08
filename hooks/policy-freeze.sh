@@ -47,6 +47,8 @@ case "$TOOL_NAME" in
 esac
 
 # Normalise path: backslashes → forward, lowercase (Windows-friendly matching)
+# shellcheck disable=SC1003
+# (SC1003 is a false-positive here: `tr` interprets '\\' as one literal backslash — correct)
 NORM=$(printf '%s' "$FILE_PATH" | tr '\\' '/' | tr '[:upper:]' '[:lower:]')
 
 BLOCKED=0
