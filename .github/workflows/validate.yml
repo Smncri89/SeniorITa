@@ -21,9 +21,11 @@ jobs:
 
       - name: Shellcheck all hooks and scripts
         run: |
+          # Severity 'warning' is the industry-standard CI gate.
+          # 'style' and 'info' levels are for local dev preference, not CI hard-fail.
           for f in hooks/*.sh scripts/*.sh; do
             echo "--- shellcheck $f"
-            shellcheck -S style "$f" || exit 1
+            shellcheck --severity=warning "$f" || exit 1
           done
 
       - name: Run protocol invariants

@@ -28,9 +28,12 @@ End every completed macro-task with a professional-growth reflection section.
 
 ## RULE-006 — Static analysis gate
 status: active
-Bash / sh / zsh → run `shellcheck -S style <file>`.
+Bash / sh / zsh → run `shellcheck --severity=warning <file>` for CI gate;
+`shellcheck -S style` locally for stricter self-review.
 PowerShell → `Invoke-ScriptAnalyzer -Path <file> -Severity Warning`.
 If the linter is unavailable, fall back to `bash -n` / PS parser and document the fallback.
+Rationale: `warning` catches real defects; `style/info` levels catch nice-to-haves
+that produce false-positives (SC1003, SC2317) and cause churn in enterprise repos.
 
 ## RULE-007 — Multi-Agent Orchestrator identity
 status: active
