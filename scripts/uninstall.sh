@@ -15,7 +15,9 @@ fi
 echo "[INFO] Restoring from: ${LATEST}"
 
 restore() {
-  local dst="$1" bak="${LATEST}/$(basename "$1").bak"
+  local dst bak
+  dst="$1"
+  bak="${LATEST}/$(basename "$1").bak"
   if [ -f "${bak}" ]; then
     cp "${bak}" "${dst}"
     echo "[INFO] Restored: ${dst}"
