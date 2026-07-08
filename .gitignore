@@ -1,8 +1,23 @@
+# Backups
 *.bak
-*.log
+backups/
+
+# Environment / secrets
 .env
 .env.*
 *.secret
+
+# Runtime artefacts (never commit)
 audit.jsonl
+session-counters.json
 .policy-unlock
 .destructive-unlock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp

@@ -1,0 +1,52 @@
+name: Bug Report
+description: Report a defect in a hook, script, or documentation
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: "v4"
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Affected component
+      options:
+        - hooks/policy-freeze.sh
+        - hooks/destructive-guard.sh
+        - scripts/install.sh
+        - scripts/uninstall.sh
+        - scripts/validate.sh
+        - scripts/audit-rotate.sh
+        - docs/*
+        - PROTOCOL.md
+        - CI workflow
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour + exit code + relevant audit.jsonl entries
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: OS / shell / Claude Code version
+      placeholder: "Windows 11 · git-bash 5.2 · Claude Code 1.x"

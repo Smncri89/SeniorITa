@@ -1,0 +1,49 @@
+name: Rule Proposal
+description: Propose a new RULE-NNN or modification to an existing rule
+title: "[RULE] "
+labels: [rule-proposal]
+body:
+  - type: input
+    id: rule_id
+    attributes:
+      label: Proposed rule ID
+      placeholder: "RULE-020"
+    validations:
+      required: true
+  - type: input
+    id: rule_name
+    attributes:
+      label: Rule name (short)
+      placeholder: "Four-eyes approval for CRITICAL tasks"
+    validations:
+      required: true
+  - type: textarea
+    id: root_cause
+    attributes:
+      label: Root cause / motivating incident
+    validations:
+      required: true
+  - type: textarea
+    id: blast_radius
+    attributes:
+      label: Blast radius (what does this rule cover / not cover)
+    validations:
+      required: true
+  - type: dropdown
+    id: enforcement
+    attributes:
+      label: Enforcement mode
+      options:
+        - Behavioural
+        - Structural (hook / OS-level)
+        - Roadmap (documented, not yet implementable)
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies (infra/tools required)
+  - type: textarea
+    id: rollback
+    attributes:
+      label: Rollback procedure if the rule is later removed

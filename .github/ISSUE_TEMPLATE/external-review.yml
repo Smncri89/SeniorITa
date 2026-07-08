@@ -1,0 +1,58 @@
+name: External Review
+description: Submit a peer review of the protocol (human or LLM reviewer)
+title: "[Review] "
+labels: [review]
+body:
+  - type: input
+    id: reviewer
+    attributes:
+      label: Reviewer identity
+      description: Your name/role, or the model + version (e.g. "GPT-4o", "Gemini 2.5 Pro")
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Protocol version reviewed
+      placeholder: "v4"
+    validations:
+      required: true
+  - type: dropdown
+    id: verdict
+    attributes:
+      label: Overall verdict
+      options:
+        - Adopt-as-is
+        - Adopt-with-changes
+        - Do-not-adopt
+    validations:
+      required: true
+  - type: textarea
+    id: critical_findings
+    attributes:
+      label: Critical findings
+      description: One finding per bullet — include suggested remediation
+      placeholder: |
+        - Finding: ... → Remediation: ...
+    validations:
+      required: true
+  - type: textarea
+    id: recommended_additions
+    attributes:
+      label: Recommended additions
+      description: New rules or docs you propose
+  - type: textarea
+    id: priority_disagreements
+    attributes:
+      label: Priority disagreements
+      description: Where would you reorder RULE-013?
+  - type: textarea
+    id: convergence_check
+    attributes:
+      label: Convergence check
+      description: Do you agree with prior reviewers' convergent findings? If not, why?
+  - type: textarea
+    id: structural_vs_behavioural
+    attributes:
+      label: Structural vs behavioural
+      description: Is v4's structural enforcement meaningful, or theatre?
