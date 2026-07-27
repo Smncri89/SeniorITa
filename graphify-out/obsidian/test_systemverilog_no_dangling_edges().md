@@ -1,0 +1,18 @@
+---
+source_file: "graphify/tests/test_languages.py"
+type: "code"
+community: "Community 229"
+location: "L2831"
+tags:
+  - graphify/code
+  - graphify/INFERRED
+  - community/Community_229
+---
+
+# test_systemverilog_no_dangling_edges()
+
+## Connections
+- [[extract_verilog()]] - `calls` [INFERRED]
+- [[test_languages.py]] - `contains` [EXTRACTED]
+
+#graphify/code #graphify/INFERRED #community/Community_229

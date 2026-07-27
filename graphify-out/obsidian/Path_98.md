@@ -1,0 +1,16 @@
+---
+source_file: ""
+type: "code"
+community: "Community 221"
+tags:
+  - graphify/code
+  - graphify/EXTRACTED
+  - community/Community_221
+---
+
+# Path
+
+## Connections
+- [[_make_skill()]] - `references` [EXTRACTED]
+
+#graphify/code #graphify/EXTRACTED #community/Community_221

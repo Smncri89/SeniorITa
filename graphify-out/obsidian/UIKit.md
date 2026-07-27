@@ -1,0 +1,17 @@
+---
+source_file: "graphify/tests/fixtures/sample.swift"
+type: "code"
+community: "Community 108"
+location: "L2"
+tags:
+  - graphify/code
+  - graphify/EXTRACTED
+  - community/Community_108
+---
+
+# UIKit
+
+## Connections
+- [[sample.swift]] - `imports` [EXTRACTED]
+
+#graphify/code #graphify/EXTRACTED #community/Community_108
