@@ -37,7 +37,7 @@
   "35": "semantic_cleanup.py",
   "36": "test_security.py",
   "37": "validate_extraction",
-  "38": "llm.py",
+  "38": "test_image_vision.py",
   "39": "extract_files_direct",
   "40": "test_reflect.py",
   "41": "test_serve.py",
@@ -57,7 +57,7 @@
   "55": "extract_objc",
   "56": "test_indirect_dispatch.py",
   "57": "save_semantic_cache",
-  "58": "_label_batch_with_retry",
+  "58": "ingest-log.py",
   "59": "generate",
   "60": "claude_install",
   "61": "ingest_scip_json",
@@ -88,7 +88,7 @@
   "86": "test_affected_cli.py",
   "87": "_llm_tiebreak",
   "88": "install",
-  "89": "_call_llm",
+  "89": "llm.py",
   "90": "hooks.py",
   "91": "TestSubprocessEncoding",
   "92": "render",
@@ -906,7 +906,7 @@
   "904": "kilo-rules.md",
   "905": "shared/extraction-spec.md",
   "906": "extraction-spec-compact.md",
-  "907": "update-all.sh",
+  "907": "update-all.ps1",
   "908": "always_on/kiro-steering.md",
   "909": "command-kilo.md",
   "910": "graphify__always_on__kiro-steering.md",
@@ -920,5 +920,6 @@
   "918": "task-tool-disk-trae.md",
   "919": "query-stub/default.md",
   "920": "posix.md",
-  "921": "powershell.md"
+  "921": "powershell.md",
+  "922": "update-all.sh"
 }

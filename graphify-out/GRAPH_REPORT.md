@@ -1,16 +1,16 @@
 # Graph Report - SeniorITa  (2026-07-27)
 
 ## Corpus Check
-- 755 files · ~1,282,079 words
+- 758 files · ~1,282,272 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 12408 nodes · 22085 edges · 922 communities (754 shown, 168 thin omitted)
+- 12410 nodes · 22085 edges · 923 communities (755 shown, 168 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 641 edges (avg confidence: 0.73)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `44297541`
+- Built from commit: `ef98b138`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -53,7 +53,7 @@
 - semantic_cleanup.py
 - test_security.py
 - validate_extraction
-- llm.py
+- test_image_vision.py
 - extract_files_direct
 - test_reflect.py
 - test_serve.py
@@ -73,7 +73,6 @@
 - extract_objc
 - test_indirect_dispatch.py
 - save_semantic_cache
-- _label_batch_with_retry
 - generate
 - claude_install
 - ingest_scip_json
@@ -104,7 +103,7 @@
 - test_affected_cli.py
 - _llm_tiebreak
 - install
-- _call_llm
+- llm.py
 - hooks.py
 - TestSubprocessEncoding
 - render
@@ -927,7 +926,7 @@
 ## Import Cycles
 - 1-file cycle: `graphify/tests/fixtures/sample.sv -> graphify/tests/fixtures/sample.sv`
 
-## Communities (922 total, 168 thin omitted)
+## Communities (923 total, 168 thin omitted)
 
 ### Community 0 - "test_extract.py"
 Cohesion: 0.01
@@ -995,7 +994,7 @@ Nodes (54): dedupe_edges(), dedupe_nodes(), Collapse nodes sharing an ``id``, la
 
 ### Community 16 - "test_llm_backends.py"
 Cohesion: 0.05
-Nodes (78): BaseException, _call_openai_compat(), _looks_like_context_exceeded(), _model_requires_default_temperature(), Detect a successful HTTP response that yielded no usable extraction.      A lo, Call any OpenAI-compatible API (Kimi, OpenAI, etc.) and return parsed JSON., Heuristically classify an exception as a context-window overflow.      Differe, True if `model` is a reasoning model that rejects an explicit temperature. (+70 more)
+Nodes (73): _call_openai_compat(), _model_requires_default_temperature(), Detect a successful HTTP response that yielded no usable extraction.      A lo, Call any OpenAI-compatible API (Kimi, OpenAI, etc.) and return parsed JSON., True if `model` is a reasoning model that rejects an explicit temperature., Resolve the temperature to send, honouring GRAPHIFY_LLM_TEMPERATURE.      Prec, Resolve the Ollama base URL. Honors an explicit OLLAMA_BASE_URL first     (verb, _resolve_ollama_base_url() (+65 more)
 
 ### Community 17 - "test_semantic_cleanup.py"
 Cohesion: 0.19
@@ -1010,8 +1009,8 @@ Cohesion: 0.03
 Nodes (129): cluster(), Run Leiden community detection. Returns {community_id: [node_ids]}.      Commu, _cap_filename(), _cypher_escape(), _cypher_label(), _dedup_node_filenames(), existing_graph_node_count(), _obsidian_tag() (+121 more)
 
 ### Community 20 - "test_chunking.py"
-Cohesion: 0.04
-Nodes (75): The on-disk path a unit belongs to (the parent file for a slice)., unit_path(), _chunk_partial_files(), extract_corpus_parallel(), _extract_with_adaptive_retry(), _pack_chunks_by_tokens(), Greedily pack files/slices into chunks that fit a token budget.      Units are, Source paths covered by a chunk, for marking a chunk that truncated to an     E (+67 more)
+Cohesion: 0.03
+Nodes (84): BaseException, The on-disk path a unit belongs to (the parent file for a slice)., unit_path(), _chunk_partial_files(), extract_corpus_parallel(), _extract_with_adaptive_retry(), _looks_like_context_exceeded(), _merge_into() (+76 more)
 
 ### Community 21 - "to_wiki"
 Cohesion: 0.06
@@ -1081,13 +1080,13 @@ Nodes (50): check_graph_file_size_cap(), _max_graph_file_bytes(), Any, Reject *p
 Cohesion: 0.07
 Nodes (49): introspect_postgres(), _quote_ident(), Connect to PostgreSQL, reconstruct DDL, and extract via extract_sql()., Double-quote a PostgreSQL identifier, escaping embedded double-quotes., assert_valid(), Validate an extraction JSON dict against the graphify schema.     Returns a lis, Raise ValueError with all errors if extraction is invalid., validate_extraction() (+41 more)
 
-### Community 38 - "llm.py"
-Cohesion: 0.04
-Nodes (77): _anthropic_content(), _backend_env_keys(), _bedrock_content(), _bedrock_inference_config(), _build_image_refs(), _call_bedrock(), _call_claude(), _dispatched_source_text() (+69 more)
+### Community 38 - "test_image_vision.py"
+Cohesion: 0.07
+Nodes (49): _anthropic_content(), _build_image_refs(), _dispatched_source_text(), _file_to_text(), _is_vision_image(), _openai_content(), _partition_semantic_files(), Path (+41 more)
 
 ### Community 39 - "extract_files_direct"
-Cohesion: 0.07
-Nodes (48): _backend_supports_vision(), detect_backend(), extract_files_direct(), _get_backend_api_key(), _ollama_host_is_link_local_or_metadata(), Return the first configured API key for backend, or an empty string., Extract semantic nodes/edges from a list of files using the given backend., True if *host* is, or resolves to, a link-local / cloud-metadata address. (+40 more)
+Cohesion: 0.06
+Nodes (50): _backend_env_keys(), _backend_supports_vision(), detect_backend(), extract_files_direct(), _get_backend_api_key(), _ollama_host_is_link_local_or_metadata(), Return accepted API-key environment variables for a backend., Return the first configured API key for backend, or an empty string. (+42 more)
 
 ### Community 40 - "test_reflect.py"
 Cohesion: 0.09
@@ -1161,10 +1160,6 @@ Nodes (42): _extract(), _extract_dir(), _extract_js_dir(), Indirect dispatch edg
 Cohesion: 0.08
 Nodes (41): _group_has_partial_marker(), load_cached(), Return cached extraction for this file if hash matches, else None.      Cache, True if any node/edge/hyperedge in a per-file group carries the internal     ``, Save semantic extraction results to cache, keyed by source_file.      Groups n, save_semantic_cache(), _mark_partial(), _partial_source_files() (+33 more)
 
-### Community 58 - "_label_batch_with_retry"
-Cohesion: 0.20
-Nodes (9): _label_batch_with_retry(), _parse_label_response(), Parse the backend's JSON ``{cid: name}`` reply. Raises on non-JSON or a     non, Label a batch of communities, splitting in half and retrying on parse failure., Honour GRAPHIFY_MAX_OUTPUT_TOKENS env var override, else use backend default., _resolve_max_tokens(), Tests for graphify.llm._label_batch_with_retry — adaptive split-and-retry on JS, Demonstrates the bug fix.      The full batch of 4 communities triggers malfor (+1 more)
-
 ### Community 59 - "generate"
 Cohesion: 0.05
 Nodes (77): _cross_community_surprises(), _cross_file_surprises(), god_nodes(), _is_concept_node(), _is_file_node(), _node_community_map(), Graph analysis: god nodes (most connected), surprising connections (cross-commun, Return the top_n most-connected real entities - the core abstractions.      Fi (+69 more)
@@ -1178,8 +1173,8 @@ Cohesion: 0.05
 Nodes (40): ingest_scip_json(), Convert a SCIP-style JSON document into Graphify nodes and edges.      Paramet, Cross-symbol relationship within ONE document resolves via the symbol index., Result passes Graphify's validate_extraction and build_from_json keeps the edges, A symbol entry with `symbol: <int>` is silently skipped., A symbol with `relationships: None` ingests without error and emits no edges., A symbol with `kind` as a non-string falls back to 'unknown'., `display_name` as a non-string falls back to the symbol suffix. (+32 more)
 
 ### Community 62 - "_score_nodes"
-Cohesion: 0.06
-Nodes (39): Combined query scorer returning the existing ranked `(score, node_id)` list., _score_nodes(), _make_random_scoring_graph(), parametrize, Searching for '路由' should match a node with label containing '路由'., A multi-word query equal to a whole label must resolve uniquely.      Regressi, Test-only oracle for the legacy per-term `_pick_seeds(terms=...)` loop.      R, Reproducible broad-match DiGraph: short constructed labels + edge noise. (+31 more)
+Cohesion: 0.07
+Nodes (37): Combined query scorer returning the existing ranked `(score, node_id)` list., _score_nodes(), _make_random_scoring_graph(), parametrize, Searching for '路由' should match a node with label containing '路由'., A multi-word query equal to a whole label must resolve uniquely.      Regressi, Test-only oracle for the legacy per-term `_pick_seeds(terms=...)` loop.      R, Reproducible broad-match DiGraph: short constructed labels + edge noise. (+29 more)
 
 ### Community 63 - "test_install_references.py"
 Cohesion: 0.08
@@ -1285,9 +1280,9 @@ Nodes (15): _crossfile_fileanchored_blocked(), _is_variant_pair(), _llm_tiebreak
 Cohesion: 0.10
 Nodes (31): install(), Install graphify post-commit and post-checkout hooks in the nearest git repo., _make_git_repo(), Hook scripts must embed sys.executable so the hook works without the     graphi, End-to-end: the files written to .git/hooks must be nohup-free (#1161)., No core.hooksPath -> normal .git/hooks install, no rejection., install() must set merge.graphify.* via git config and add the     .gitattribut, Running install twice must not duplicate the .gitattributes line. (+23 more)
 
-### Community 89 - "_call_llm"
-Cohesion: 0.08
-Nodes (28): _azure_client(), _backend_pkg_hint(), _call_azure(), _call_llm(), _claude_cli_envelope(), Package-missing message that works for the recommended `uv tool` install., Parse the JSON returned by `claude -p --output-format json`.      Older Claude, Construct an AzureOpenAI client with env-driven api_version and timeout. (+20 more)
+### Community 89 - "llm.py"
+Cohesion: 0.04
+Nodes (59): _azure_client(), _backend_pkg_hint(), _bedrock_content(), _bedrock_inference_config(), _call_azure(), _call_bedrock(), _call_claude(), _call_llm() (+51 more)
 
 ### Community 90 - "hooks.py"
 Cohesion: 0.11
@@ -1319,7 +1314,7 @@ Nodes (28): build_section_node_map(), CallflowOptions, classify_edges(), detect_
 
 ### Community 97 - "_relations"
 Cohesion: 0.08
-Nodes (29): extract_php(), Extract classes, functions, methods, namespace uses, and calls from a .php file., Module-level arrow functions must still emit a node and capture their calls (#10, _relations(), test_apex_contains_and_method_relations(), test_java_finds_imports(), test_js_module_level_arrow_produces_node_and_call_edges(), test_php_config_helper_target_matches_first_segment() (+21 more)
+Nodes (29): extract_php(), Extract classes, functions, methods, namespace uses, and calls from a .php file., Module-level arrow functions must still emit a node and capture their calls (#10, _relations(), test_apex_soql_uses_edge(), test_java_finds_imports(), test_js_module_level_arrow_produces_node_and_call_edges(), test_php_config_helper_target_matches_first_segment() (+21 more)
 
 ### Community 98 - "serve.py"
 Cohesion: 0.08
@@ -1506,8 +1501,8 @@ Cohesion: 0.17
 Nodes (20): _bind_node_evidence(), _label_identifiers(), Identifier tokens from a node label, stripped of a trailing call/args     paren, Downgrade code-typed nodes whose symbol name has no evidence in the source, _by_label(), Tests for semantic evidence-binding in graphify.llm.  A code node the model re, Drive extract_files_direct with a faked backend returning ``nodes``., _run() (+12 more)
 
 ### Community 144 - "_pick_seeds"
-Cohesion: 0.10
-Nodes (23): _pick_seeds(), Select BFS seed nodes, stopping when score drops too far below the top.      P, DiGraph, End-to-end for #1900: a German question over a graph with German     heading-no, FooBarService at 1000 vs error nodes at 1.0 → only 1 seed chosen., When all scores are within 20% of the top, keep up to 3 seeds., Never return more than max_k seeds even when all scores are close., G/best_seed_by_term are optional and default to None: existing callers     see (+15 more)
+Cohesion: 0.09
+Nodes (25): _pick_seeds(), Select BFS seed nodes, stopping when score drops too far below the top.      P, DiGraph, End-to-end for #1900: a German question over a graph with German     heading-no, FooBarService at 1000 vs error nodes at 1.0 → only 1 seed chosen., When all scores are within 20% of the top, keep up to 3 seeds., Never return more than max_k seeds even when all scores are close., G/best_seed_by_term are optional and default to None: existing callers     see (+17 more)
 
 ### Community 145 - "test_extract_code_only_cli.py"
 Cohesion: 0.16

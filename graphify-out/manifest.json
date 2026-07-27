@@ -1919,11 +1919,6 @@
     "ast_hash": "9b695d6d67699f6fc702c0e239669036",
     "semantic_hash": "9b695d6d67699f6fc702c0e239669036"
   },
-  "scripts/update-all.sh": {
-    "mtime": 1785164227.8160448,
-    "ast_hash": "4ccb38d7284fd6c47ffddd0f23f0a3ce",
-    "semantic_hash": ""
-  },
   ".github/ISSUE_TEMPLATE/bug.yml": {
     "mtime": 1783590775.216061,
     "ast_hash": "3cdab6ab4245b1ff4b7296df4f6d1541",
@@ -3852,6 +3847,26 @@
   "graphify/docs/logo.png": {
     "mtime": 1785158334.0990431,
     "ast_hash": "14d81dd51293d177685c9052049ba87e",
+    "semantic_hash": ""
+  },
+  "scripts/scripts/update-all.sh": {
+    "mtime": 1785164772.7640817,
+    "ast_hash": "4ccb38d7284fd6c47ffddd0f23f0a3ce",
+    "semantic_hash": ""
+  },
+  "scripts/tasks.json": {
+    "mtime": 1785164322.860662,
+    "ast_hash": "74bb0408af0d8ca5d092ef4041f2ae3b",
+    "semantic_hash": ""
+  },
+  "scripts/update-all.ps1": {
+    "mtime": 1785164892.1684952,
+    "ast_hash": "9ec13322837a2dfba1fd177df233b62e",
+    "semantic_hash": ""
+  },
+  "scripts/ingest-log.py": {
+    "mtime": 1785164892.1684952,
+    "ast_hash": "797e9af5899498cea58e18746605a6d2",
     "semantic_hash": ""
   }
 }

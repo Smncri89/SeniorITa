@@ -15938,7 +15938,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "graphify_graphify_llm",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "llm.py"
     },
@@ -15949,7 +15949,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "graphify_graphify_llm_get_tokenizer",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "_get_tokenizer()"
     },
@@ -15983,7 +15983,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_py_path",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "path"
     },
     {
@@ -16015,8 +16015,8 @@
       "source_location": "L304",
       "_origin": "ast",
       "id": "graphify_graphify_llm_resolve_max_tokens",
-      "community": 58,
-      "community_name": "_label_batch_with_retry",
+      "community": 89,
+      "community_name": "llm.py",
       "norm_label": "_resolve_max_tokens()"
     },
     {
@@ -16048,7 +16048,7 @@
       "source_location": "L377",
       "_origin": "ast",
       "id": "graphify_graphify_llm_bedrock_inference_config",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "_bedrock_inference_config()"
     },
@@ -16082,7 +16082,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_resolve_max_retries",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "_resolve_max_retries()"
     },
     {
@@ -16093,7 +16093,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_thinking_disabled_via_env",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "_thinking_disabled_via_env()"
     },
     {
@@ -16115,7 +16115,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_file_to_text",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "_file_to_text()"
     },
     {
@@ -16126,7 +16126,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_resolve_under_root",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "_resolve_under_root()"
     },
     {
@@ -16136,7 +16136,7 @@
       "source_location": "L538",
       "_origin": "ast",
       "id": "graphify_graphify_llm_neutralise_injection_sentinels",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "_neutralise_injection_sentinels()"
     },
@@ -16147,7 +16147,7 @@
       "source_location": "L548",
       "_origin": "ast",
       "id": "graphify_graphify_llm_wrap_untrusted",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "_wrap_untrusted()"
     },
@@ -16159,7 +16159,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_read_files",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "_read_files()"
     },
     {
@@ -16181,7 +16181,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_dispatched_source_text",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "_dispatched_source_text()"
     },
     {
@@ -16202,7 +16202,7 @@
       "source_location": "L757",
       "_origin": "ast",
       "id": "graphify_graphify_llm_imageref",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "_imageref"
     },
@@ -16213,7 +16213,7 @@
       "source_location": "L772",
       "_origin": "ast",
       "id": "graphify_graphify_llm_imageref_b64",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": ".b64()"
     },
@@ -16224,7 +16224,7 @@
       "source_location": "L776",
       "_origin": "ast",
       "id": "graphify_graphify_llm_imageref_bedrock_format",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": ".bedrock_format()"
     },
@@ -16236,7 +16236,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_is_vision_image",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "_is_vision_image()"
     },
     {
@@ -16247,7 +16247,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_partition_semantic_files",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "_partition_semantic_files()"
     },
     {
@@ -16258,7 +16258,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_build_image_refs",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "_build_image_refs()"
     },
     {
@@ -16269,7 +16269,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_strip_pixels",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "_strip_pixels()"
     },
     {
@@ -16290,7 +16290,7 @@
       "source_location": "L855",
       "_origin": "ast",
       "id": "graphify_graphify_llm_image_notes",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "_image_notes()"
     },
@@ -16301,7 +16301,7 @@
       "source_location": "L891",
       "_origin": "ast",
       "id": "graphify_graphify_llm_with_image_notes",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "_with_image_notes()"
     },
@@ -16313,7 +16313,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_anthropic_content",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "_anthropic_content()"
     },
     {
@@ -16324,7 +16324,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_openai_content",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "_openai_content()"
     },
     {
@@ -16334,7 +16334,7 @@
       "source_location": "L929",
       "_origin": "ast",
       "id": "graphify_graphify_llm_bedrock_content",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "_bedrock_content()"
     },
@@ -16378,8 +16378,8 @@
       "source_location": "L1067",
       "_origin": "ast",
       "id": "graphify_graphify_llm_backend_env_keys",
-      "community": 38,
-      "community_name": "llm.py",
+      "community": 39,
+      "community_name": "extract_files_direct",
       "norm_label": "_backend_env_keys()"
     },
     {
@@ -16423,7 +16423,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_backend_pkg_hint",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "_backend_pkg_hint()"
     },
     {
@@ -16444,7 +16444,7 @@
       "source_location": "L1270",
       "_origin": "ast",
       "id": "graphify_graphify_llm_call_claude",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "_call_claude()"
     },
@@ -16456,7 +16456,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_claude_cli_envelope",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "_claude_cli_envelope()"
     },
     {
@@ -16489,7 +16489,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_azure_client",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "_azure_client()"
     },
     {
@@ -16500,7 +16500,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_call_azure",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "_call_azure()"
     },
     {
@@ -16510,7 +16510,7 @@
       "source_location": "L1608",
       "_origin": "ast",
       "id": "graphify_graphify_llm_call_bedrock",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "_call_bedrock()"
     },
@@ -16554,8 +16554,8 @@
       "source_location": "L1882",
       "_origin": "ast",
       "id": "graphify_graphify_llm_looks_like_context_exceeded",
-      "community": 16,
-      "community_name": "test_llm_backends.py",
+      "community": 20,
+      "community_name": "test_chunking.py",
       "norm_label": "_looks_like_context_exceeded()"
     },
     {
@@ -16565,8 +16565,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "baseexception",
-      "community": 16,
-      "community_name": "test_llm_backends.py",
+      "community": 20,
+      "community_name": "test_chunking.py",
       "norm_label": "baseexception"
     },
     {
@@ -16598,8 +16598,8 @@
       "source_location": "L1924",
       "_origin": "ast",
       "id": "graphify_graphify_llm_merged_partial_files",
-      "community": 38,
-      "community_name": "llm.py",
+      "community": 20,
+      "community_name": "test_chunking.py",
       "norm_label": "_merged_partial_files()"
     },
     {
@@ -16653,8 +16653,8 @@
       "source_location": "L2447",
       "_origin": "ast",
       "id": "graphify_graphify_llm_merge_into",
-      "community": 38,
-      "community_name": "llm.py",
+      "community": 20,
+      "community_name": "test_chunking.py",
       "norm_label": "_merge_into()"
     },
     {
@@ -16665,7 +16665,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_call_llm",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "_call_llm()"
     },
     {
@@ -16741,8 +16741,8 @@
       "source_location": "L2807",
       "_origin": "ast",
       "id": "graphify_graphify_llm_parse_label_response",
-      "community": 58,
-      "community_name": "_label_batch_with_retry",
+      "community": 89,
+      "community_name": "llm.py",
       "norm_label": "_parse_label_response()"
     },
     {
@@ -16752,8 +16752,8 @@
       "source_location": "L2844",
       "_origin": "ast",
       "id": "graphify_graphify_llm_label_batch_with_retry",
-      "community": 58,
-      "community_name": "_label_batch_with_retry",
+      "community": 89,
+      "community_name": "llm.py",
       "norm_label": "_label_batch_with_retry()"
     },
     {
@@ -16785,7 +16785,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_40",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "return a tiktoken encoder for accurate token counts, or none if tiktoken     is"
     },
@@ -16818,8 +16818,8 @@
       "source_location": "L305",
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_305",
-      "community": 58,
-      "community_name": "_label_batch_with_retry",
+      "community": 89,
+      "community_name": "llm.py",
       "norm_label": "honour graphify_max_output_tokens env var override, else use backend default."
     },
     {
@@ -16851,7 +16851,7 @@
       "source_location": "L378",
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_378",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "build bedrock inferenceconfig, honouring graphify_llm_temperature.      bedroc"
     },
@@ -16885,7 +16885,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_417",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "how many times the provider sdk retries a transient error (notably http 429"
     },
     {
@@ -16896,7 +16896,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_436",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "opt-in (graphify_disable_thinking) to send ``{\"thinking\": {\"type\": \"disabled\"}}`"
     },
     {
@@ -16918,7 +16918,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_498",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "return a text-like file's content for the extraction prompt.      most files a"
     },
     {
@@ -16929,7 +16929,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_512",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "return the resolved path only when it stays inside ``root``."
     },
     {
@@ -16939,7 +16939,7 @@
       "source_location": "L539",
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_539",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "defang known chat-template / jailbreak control tokens in untrusted text."
     },
@@ -16950,7 +16950,7 @@
       "source_location": "L549",
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_549",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "wrap one file's content in a labelled, hash-stamped untrusted-data block."
     },
@@ -16962,7 +16962,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_565",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "return file/slice contents formatted for the extraction prompt.      each unit"
     },
     {
@@ -16984,7 +16984,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_633",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "map each dispatched text unit's resolved path to the (lower-cased, capped)"
     },
     {
@@ -17005,7 +17005,7 @@
       "source_location": "L758",
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_758",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "a single image destined for a vision request.      `raw` is none when the imag"
     },
@@ -17017,7 +17017,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_788",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "split a chunk into (text-like units, raster-image files).      a ``fileslice``"
     },
     {
@@ -17028,7 +17028,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_799",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "build `_imageref`s for raster images.      `read_bytes=true` (base64 backends)"
     },
     {
@@ -17039,7 +17039,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_839",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "return refs with pixel data dropped (for non-vision backends)."
     },
     {
@@ -17060,7 +17060,7 @@
       "source_location": "L856",
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_856",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "text block listing the images so the model emits one node per image.      alwa"
     },
@@ -17072,7 +17072,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_901",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "build the anthropic `messages[].content` value (str, or block list with images)."
     },
     {
@@ -17083,7 +17083,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_914",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "build the openai-compatible user `content` value (str, or part list with images)"
     },
     {
@@ -17093,7 +17093,7 @@
       "source_location": "L930",
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_930",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "build the bedrock converse user content list (raw bytes, not base64)."
     },
@@ -17137,8 +17137,8 @@
       "source_location": "L1068",
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_1068",
-      "community": 38,
-      "community_name": "llm.py",
+      "community": 39,
+      "community_name": "extract_files_direct",
       "norm_label": "return accepted api-key environment variables for a backend."
     },
     {
@@ -17182,7 +17182,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_1106",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "package-missing message that works for the recommended `uv tool` install."
     },
     {
@@ -17203,7 +17203,7 @@
       "source_location": "L1271",
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_1271",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "call anthropic claude directly (not via openai compat layer)."
     },
@@ -17215,7 +17215,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_1309",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "parse the json returned by `claude -p --output-format json`.      older claude"
     },
     {
@@ -17248,7 +17248,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_1546",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "construct an azureopenai client with env-driven api_version and timeout."
     },
     {
@@ -17259,7 +17259,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_1577",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "call azure openai service via the azureopenai sdk client."
     },
     {
@@ -17269,7 +17269,7 @@
       "source_location": "L1609",
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_1609",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "call aws bedrock via boto3 converse api using the standard aws credential chain."
     },
@@ -17313,8 +17313,8 @@
       "source_location": "L1883",
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_1883",
-      "community": 16,
-      "community_name": "test_llm_backends.py",
+      "community": 20,
+      "community_name": "test_chunking.py",
       "norm_label": "heuristically classify an exception as a context-window overflow.      differe"
     },
     {
@@ -17346,8 +17346,8 @@
       "source_location": "L1925",
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_1925",
-      "community": 38,
-      "community_name": "llm.py",
+      "community": 20,
+      "community_name": "test_chunking.py",
       "norm_label": "union of the ``_partial_files`` carried by each result (survives merges)."
     },
     {
@@ -17401,8 +17401,8 @@
       "source_location": "L2448",
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_2448",
-      "community": 38,
-      "community_name": "llm.py",
+      "community": 20,
+      "community_name": "test_chunking.py",
       "norm_label": "append a chunk result into the running merged accumulator."
     },
     {
@@ -17413,7 +17413,7 @@
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_2472",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "send a plain-text prompt to `backend` and return the model's text reply."
     },
     {
@@ -17478,8 +17478,8 @@
       "source_location": "L2808",
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_2808",
-      "community": 58,
-      "community_name": "_label_batch_with_retry",
+      "community": 89,
+      "community_name": "llm.py",
       "norm_label": "parse the backend's json ``{cid: name}`` reply. raises on non-json or a     non"
     },
     {
@@ -17489,8 +17489,8 @@
       "source_location": "L2854",
       "_origin": "ast",
       "id": "graphify_graphify_llm_rationale_2854",
-      "community": 58,
-      "community_name": "_label_batch_with_retry",
+      "community": 89,
+      "community_name": "llm.py",
       "norm_label": "label a batch of communities, splitting in half and retrying on parse failure."
     },
     {
@@ -32765,7 +32765,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "graphify_tests_test_anthropic_custom_endpoint",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "test_anthropic_custom_endpoint.py"
     },
@@ -32776,7 +32776,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "graphify_tests_test_anthropic_custom_endpoint_test_claude_defaults_without_env",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "test_claude_defaults_without_env()"
     },
@@ -32787,7 +32787,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "graphify_tests_test_anthropic_custom_endpoint_test_claude_base_url_and_model_env_override",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "test_claude_base_url_and_model_env_override()"
     },
@@ -32798,7 +32798,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "graphify_tests_test_anthropic_custom_endpoint_rationale_1",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "tests for anthropic_base_url / anthropic_model overrides on the claude backend."
     },
@@ -33316,7 +33316,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_backend_extras",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "test_backend_extras.py"
     },
     {
@@ -33327,7 +33327,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_backend_extras_extras",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "_extras()"
     },
     {
@@ -33338,7 +33338,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_backend_extras_test_anthropic_extra_exists",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "test_anthropic_extra_exists()"
     },
     {
@@ -33349,7 +33349,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_backend_extras_test_anthropic_in_all_extra",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "test_anthropic_in_all_extra()"
     },
     {
@@ -33360,7 +33360,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_backend_extras_test_backend_pkg_hint_points_at_uv_tool_and_extra",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "test_backend_pkg_hint_points_at_uv_tool_and_extra()"
     },
     {
@@ -33371,7 +33371,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_backend_extras_rationale_1",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "the claude backend must be installable via an extra, and the missing-package me"
     },
     {
@@ -38398,7 +38398,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_claude_cli_backend_test_call_llm_claude_cli_branch_honours_timeout",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "test_call_llm_claude_cli_branch_honours_timeout()"
     },
     {
@@ -38409,7 +38409,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_claude_cli_backend_test_simple_completion_resolves_cmd_shim_on_windows",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "test_simple_completion_resolves_cmd_shim_on_windows()"
     },
     {
@@ -38552,7 +38552,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_claude_cli_backend_rationale_328",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "the label/_simple_completion path must spawn the resolved claude.cmd on     win"
     },
     {
@@ -54227,7 +54227,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_file_slice_test_read_files_keys_every_slice_to_parent_path",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_read_files_keys_every_slice_to_parent_path()"
     },
     {
@@ -54260,7 +54260,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_file_slice_test_partition_keeps_slices_as_text",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_partition_keeps_slices_as_text()"
     },
     {
@@ -57186,7 +57186,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_image_vision.py"
     },
     {
@@ -57197,7 +57197,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_make_corpus",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "_make_corpus()"
     },
     {
@@ -57208,7 +57208,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_pdf_routed_through_pypdf_not_readtext",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_pdf_routed_through_pypdf_not_readtext()"
     },
     {
@@ -57219,7 +57219,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_pdf_is_not_treated_as_vision_image",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_pdf_is_not_treated_as_vision_image()"
     },
     {
@@ -57230,7 +57230,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_non_pdf_still_read_as_plain_text",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_non_pdf_still_read_as_plain_text()"
     },
     {
@@ -57241,7 +57241,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_read_files_skips_out_of_root_symlink",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_read_files_skips_out_of_root_symlink()"
     },
     {
@@ -57252,7 +57252,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_partition_splits_raster_from_text",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_partition_splits_raster_from_text()"
     },
     {
@@ -57263,7 +57263,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_build_image_refs_sets_rel_media_and_bytes",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_build_image_refs_sets_rel_media_and_bytes()"
     },
     {
@@ -57274,7 +57274,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_build_image_refs_skips_out_of_root_symlink",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_build_image_refs_skips_out_of_root_symlink()"
     },
     {
@@ -57285,7 +57285,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_build_image_refs_drops_oversized",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_build_image_refs_drops_oversized()"
     },
     {
@@ -57296,7 +57296,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_path_backend_skips_byte_read_and_size_cap",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_path_backend_skips_byte_read_and_size_cap()"
     },
     {
@@ -57307,7 +57307,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_claude_cli_passes_oversized_image_by_path",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_claude_cli_passes_oversized_image_by_path()"
     },
     {
@@ -57340,7 +57340,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_chunk_packing_caps_images_per_chunk",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_chunk_packing_caps_images_per_chunk()"
     },
     {
@@ -57351,7 +57351,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_anthropic_content_has_base64_block",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_anthropic_content_has_base64_block()"
     },
     {
@@ -57362,7 +57362,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_openai_content_has_data_uri",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_openai_content_has_data_uri()"
     },
     {
@@ -57372,7 +57372,7 @@
       "source_location": "L217",
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_bedrock_content_uses_raw_bytes",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "test_bedrock_content_uses_raw_bytes()"
     },
@@ -57384,7 +57384,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_builders_fall_back_to_string_without_pixels",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_builders_fall_back_to_string_without_pixels()"
     },
     {
@@ -57395,7 +57395,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_no_images_is_byte_identical",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_no_images_is_byte_identical()"
     },
     {
@@ -57406,7 +57406,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_fake_anthropic",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "_fake_anthropic()"
     },
     {
@@ -57417,7 +57417,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_fake_openai",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "_fake_openai()"
     },
     {
@@ -57428,7 +57428,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_fake_boto3",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "_fake_boto3()"
     },
     {
@@ -57439,7 +57439,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_call_claude_sends_image_block",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_call_claude_sends_image_block()"
     },
     {
@@ -57450,7 +57450,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_call_openai_compat_sends_image_url",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_call_openai_compat_sends_image_url()"
     },
     {
@@ -57461,7 +57461,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_call_openai_compat_text_only_without_images",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_call_openai_compat_text_only_without_images()"
     },
     {
@@ -57472,7 +57472,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_call_bedrock_sends_raw_image_bytes",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_call_bedrock_sends_raw_image_bytes()"
     },
     {
@@ -57483,7 +57483,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_claude_cli_adds_dir_and_read_instruction",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_claude_cli_adds_dir_and_read_instruction()"
     },
     {
@@ -57494,7 +57494,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_test_extract_files_direct_gates_pixels_by_capability",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "test_extract_files_direct_gates_pixels_by_capability()"
     },
     {
@@ -57505,7 +57505,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_rationale_1",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "tests for image-vision support across the direct extraction backends.  covers"
     },
     {
@@ -57516,7 +57516,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_image_vision_rationale_34",
       "community": 38,
-      "community_name": "llm.py",
+      "community_name": "test_image_vision.py",
       "norm_label": "a corpus with one raster image, one svg (text), and one markdown doc."
     },
     {
@@ -63785,8 +63785,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "graphify_tests_test_label_retry",
-      "community": 58,
-      "community_name": "_label_batch_with_retry",
+      "community": 89,
+      "community_name": "llm.py",
       "norm_label": "test_label_retry.py"
     },
     {
@@ -63796,8 +63796,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "graphify_tests_test_label_retry_test_label_batch_recovers_via_split_on_invalid_json",
-      "community": 58,
-      "community_name": "_label_batch_with_retry",
+      "community": 89,
+      "community_name": "llm.py",
       "norm_label": "test_label_batch_recovers_via_split_on_invalid_json()"
     },
     {
@@ -63807,8 +63807,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "graphify_tests_test_label_retry_rationale_1",
-      "community": 58,
-      "community_name": "_label_batch_with_retry",
+      "community": 89,
+      "community_name": "llm.py",
       "norm_label": "tests for graphify.llm._label_batch_with_retry \u2014 adaptive split-and-retry on js"
     },
     {
@@ -63818,8 +63818,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "graphify_tests_test_label_retry_rationale_13",
-      "community": 58,
-      "community_name": "_label_batch_with_retry",
+      "community": 89,
+      "community_name": "llm.py",
       "norm_label": "demonstrates the bug fix.      the full batch of 4 communities triggers malfor"
     },
     {
@@ -67789,8 +67789,8 @@
       "source_location": "L2728",
       "_origin": "ast",
       "id": "graphify_tests_test_languages_test_apex_contains_and_method_relations",
-      "community": 97,
-      "community_name": "_relations",
+      "community": 23,
+      "community_name": "_labels",
       "norm_label": "test_apex_contains_and_method_relations()"
     },
     {
@@ -67800,8 +67800,8 @@
       "source_location": "L2734",
       "_origin": "ast",
       "id": "graphify_tests_test_languages_test_apex_soql_uses_edge",
-      "community": 23,
-      "community_name": "_labels",
+      "community": 97,
+      "community_name": "_relations",
       "norm_label": "test_apex_soql_uses_edge()"
     },
     {
@@ -69285,8 +69285,8 @@
       "source_location": "L252",
       "_origin": "ast",
       "id": "graphify_tests_test_llm_backends_test_looks_like_context_exceeded_matches_common_messages",
-      "community": 16,
-      "community_name": "test_llm_backends.py",
+      "community": 20,
+      "community_name": "test_chunking.py",
       "norm_label": "test_looks_like_context_exceeded_matches_common_messages()"
     },
     {
@@ -69296,8 +69296,8 @@
       "source_location": "L264",
       "_origin": "ast",
       "id": "graphify_tests_test_llm_backends_test_looks_like_context_exceeded_ignores_unrelated_errors",
-      "community": 16,
-      "community_name": "test_llm_backends.py",
+      "community": 20,
+      "community_name": "test_chunking.py",
       "norm_label": "test_looks_like_context_exceeded_ignores_unrelated_errors()"
     },
     {
@@ -69880,7 +69880,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_llm_backends_test_resolve_max_retries_default_and_env",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "test_resolve_max_retries_default_and_env()"
     },
     {
@@ -69902,7 +69902,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_llm_backends_test_call_llm_claude_client_built_with_timeout_and_retries",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "test_call_llm_claude_client_built_with_timeout_and_retries()"
     },
     {
@@ -69913,7 +69913,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_llm_backends_test_call_llm_openai_compat_client_built_with_timeout_and_retries",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "test_call_llm_openai_compat_client_built_with_timeout_and_retries()"
     },
     {
@@ -70034,7 +70034,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_llm_backends_rationale_1064",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "default retry count is generous (so 429s are absorbed, #1523); env overrides."
     },
     {
@@ -70056,7 +70056,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_llm_backends_rationale_1109",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "the secondary dispatch path (_call_llm, used by the dedup tiebreaker)     must"
     },
     {
@@ -70067,7 +70067,7 @@
       "_origin": "ast",
       "id": "graphify_tests_test_llm_backends_rationale_1140",
       "community": 89,
-      "community_name": "_call_llm",
+      "community_name": "llm.py",
       "norm_label": "same #1442 fix for the openai-compatible branch of _call_llm."
     },
     {
@@ -73223,7 +73223,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "graphify_tests_test_openai_custom_endpoint",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "test_openai_custom_endpoint.py"
     },
@@ -73234,7 +73234,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "graphify_tests_test_openai_custom_endpoint_test_openai_defaults_without_env",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "test_openai_defaults_without_env()"
     },
@@ -73245,7 +73245,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "graphify_tests_test_openai_custom_endpoint_test_openai_base_url_and_model_env_override",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "test_openai_base_url_and_model_env_override()"
     },
@@ -73256,7 +73256,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "graphify_tests_test_openai_custom_endpoint_test_graphify_openai_model_wins_over_openai_model",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "test_graphify_openai_model_wins_over_openai_model()"
     },
@@ -73267,7 +73267,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "graphify_tests_test_openai_custom_endpoint_rationale_1",
-      "community": 38,
+      "community": 89,
       "community_name": "llm.py",
       "norm_label": "tests for openai_base_url / openai_model overrides on the openai backend.  the"
     },
@@ -84410,8 +84410,8 @@
       "source_location": "L887",
       "_origin": "ast",
       "id": "graphify_tests_test_serve_test_score_nodes_scores_identical_labels_equally",
-      "community": 62,
-      "community_name": "_score_nodes",
+      "community": 144,
+      "community_name": "_pick_seeds",
       "norm_label": "test_score_nodes_scores_identical_labels_equally()"
     },
     {
@@ -85125,8 +85125,8 @@
       "source_location": "L888",
       "_origin": "ast",
       "id": "graphify_tests_test_serve_rationale_888",
-      "community": 62,
-      "community_name": "_score_nodes",
+      "community": 144,
+      "community_name": "_pick_seeds",
       "norm_label": "guard against a per-label multiplicity penalty leaking into _score_nodes     (s"
     },
     {
@@ -103826,6 +103826,17 @@
       "norm_label": "audit-rotate.sh script"
     },
     {
+      "label": "ingest-log.py",
+      "file_type": "code",
+      "source_file": "scripts/ingest-log.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "scripts_ingest_log",
+      "community": 58,
+      "community_name": "ingest-log.py",
+      "norm_label": "ingest-log.py"
+    },
+    {
       "label": "install.sh",
       "file_type": "code",
       "source_file": "scripts/install.sh",
@@ -103946,6 +103957,36 @@
       "norm_label": "do_or_dry()"
     },
     {
+      "label": "update-all.sh",
+      "file_type": "code",
+      "source_file": "scripts/scripts/update-all.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "scripts_scripts_update_all",
+      "community": 922,
+      "community_name": "update-all.sh",
+      "norm_label": "update-all.sh"
+    },
+    {
+      "label": "update-all.sh script",
+      "file_type": "code",
+      "source_file": "scripts/scripts/update-all.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "scripts_scripts_update_all_sh__entry",
+      "community": 922,
+      "community_name": "update-all.sh",
+      "norm_label": "update-all.sh script"
+    },
+    {
       "label": "uninstall.sh",
       "file_type": "code",
       "source_file": "scripts/uninstall.sh",
@@ -103991,34 +104032,15 @@
       "norm_label": "restore()"
     },
     {
-      "label": "update-all.sh",
+      "label": "update-all.ps1",
       "file_type": "code",
-      "source_file": "scripts/update-all.sh",
+      "source_file": "scripts/update-all.ps1",
       "source_location": "L1",
-      "metadata": {
-        "language": "bash",
-        "kind": "file"
-      },
       "_origin": "ast",
       "id": "scripts_update_all",
       "community": 907,
-      "community_name": "update-all.sh",
-      "norm_label": "update-all.sh"
-    },
-    {
-      "label": "update-all.sh script",
-      "file_type": "code",
-      "source_file": "scripts/update-all.sh",
-      "source_location": "L1",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_entrypoint"
-      },
-      "_origin": "ast",
-      "id": "scripts_update_all_sh__entry",
-      "community": 907,
-      "community_name": "update-all.sh",
-      "norm_label": "update-all.sh script"
+      "community_name": "update-all.ps1",
+      "norm_label": "update-all.ps1"
     },
     {
       "label": "validate.sh",
@@ -360422,6 +360444,17 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/scripts/update-all.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_scripts_update_all",
+      "target": "scripts_scripts_update_all_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "defines",
       "confidence": "EXTRACTED",
       "source_file": "scripts/uninstall.sh",
@@ -360453,17 +360486,6 @@
       "_origin": "ast",
       "source": "scripts_uninstall_sh__entry",
       "target": "scripts_uninstall_restore",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/update-all.sh",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "scripts_update_all",
-      "target": "scripts_update_all_sh__entry",
       "confidence_score": 1.0
     },
     {
@@ -390257,5 +390279,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "442975412b0531b9b43b11630f1ba45c7b62320f"
+  "built_at_commit": "ef98b1382d2b84d9a740cb362e137e036ba30a71"
 }
