@@ -1,6 +1,10 @@
 ﻿Write-Host "🔍 [1/3] Scansione ed ingestione log..." -ForegroundColor Cyan
 if (Test-Path "scripts/ingest-log.py") {
-    python scripts/ingest-log.py
+    if (Get-Command "py" -ErrorAction SilentlyContinue) {
+        py scripts/ingest-log.py
+    } elseif (Get-Command "python" -ErrorAction SilentlyContinue) {
+        python scripts/ingest-log.py
+    }
 }
 
 Write-Host "📊 [2/3] Aggiornamento del grafo di conoscenza (Graphify)..." -ForegroundColor Cyan
