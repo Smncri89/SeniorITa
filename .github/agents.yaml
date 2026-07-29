@@ -74,3 +74,13 @@ agents:
       - ci-cd
       - automation
       - deployment workflows
+
+  orchestrator:
+    file: agents/orchestrator.agent.md
+    role: coordination
+    priority: critical
+    responsibilities:
+      - agent routing
+      - workflow coordination
+      - governance enforcement
+      - multi-agent orchestration
