@@ -1,0 +1,159 @@
+version: 1
+
+project: SeniorITa
+
+agent_matrix:
+
+  orchestrator:
+    category: coordination
+    priority: critical
+    capabilities:
+      - request analysis
+      - agent routing
+      - workflow coordination
+      - governance enforcement
+    invokes:
+      - architect
+      - developer
+      - security
+      - test
+      - reviewer
+      - documentation
+      - knowledge
+      - release
+      - devops
+
+
+  architect:
+    category: architecture
+    priority: high
+    capabilities:
+      - system design
+      - architecture decisions
+      - dependency analysis
+      - scalability evaluation
+
+
+  developer:
+    category: implementation
+    priority: high
+    capabilities:
+      - coding
+      - refactoring
+      - feature implementation
+      - bug fixing
+
+
+  security:
+    category: security
+    priority: critical
+    capabilities:
+      - vulnerability analysis
+      - secure coding review
+      - secrets detection
+      - compliance analysis
+
+
+  test:
+    category: quality
+    priority: high
+    capabilities:
+      - test planning
+      - regression testing
+      - validation strategy
+
+
+  reviewer:
+    category: quality
+    priority: high
+    capabilities:
+      - code review
+      - maintainability analysis
+      - defect detection
+
+
+  documentation:
+    category: knowledge
+    priority: medium
+    capabilities:
+      - documentation updates
+      - technical writing
+      - documentation consistency
+
+
+  knowledge:
+    category: knowledge
+    priority: medium
+    capabilities:
+      - ADR management
+      - project memory
+      - context preservation
+
+
+  release:
+    category: operations
+    priority: high
+    capabilities:
+      - release validation
+      - version management
+      - deployment readiness
+
+
+  devops:
+    category: operations
+    priority: high
+    capabilities:
+      - CI/CD
+      - automation
+      - deployment workflows
+
+
+routing_rules:
+
+  architecture_change:
+    agents:
+      - orchestrator
+      - architect
+      - reviewer
+      - documentation
+
+
+  feature_development:
+    agents:
+      - orchestrator
+      - architect
+      - developer
+      - test
+      - security
+      - reviewer
+
+
+  production_release:
+    agents:
+      - orchestrator
+      - release
+      - devops
+      - security
+
+
+  knowledge_update:
+    agents:
+      - orchestrator
+      - knowledge
+      - documentation
+
+
+governance:
+
+  mandatory:
+    - security_validation
+    - testing
+    - review
+    - documentation
+
+  escalation:
+    security_issue:
+      target: security
+
+    architecture_conflict:
+      target: architect
