@@ -25,3 +25,7 @@ Thumbs.db
 graphify-out/cache/
 graphify-out/
 
+
+# Local project structure exports
+structure.txt
+tree.txt
