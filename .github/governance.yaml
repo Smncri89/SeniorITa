@@ -5,19 +5,23 @@ project: SeniorITa
 governance:
 
   workflow:
+    - orchestrator
     - architect
     - developer
     - test
     - security
     - reviewer
     - documentation
+    - knowledge
     - release
+    - devops
 
   mandatory_checks:
     architecture_review: true
     security_review: true
     test_validation: true
     documentation_update: true
+    knowledge_validation: true
 
   quality_gates:
 
@@ -36,12 +40,18 @@ governance:
         - release
         - devops
 
+    knowledge:
+      required:
+        - knowledge
+        - documentation
+
   rules:
 
     - "No production change without review"
     - "No critical security issue ignored"
     - "No feature without validation"
     - "Architecture decisions must be documented"
+    - "Knowledge updates must preserve historical context"
 
   escalation:
 
@@ -56,3 +66,7 @@ governance:
     release:
       priority: high
       agent: release
+
+    knowledge:
+      priority: medium
+      agent: knowledge
