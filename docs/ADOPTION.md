@@ -1,4 +1,4 @@
-# Adoption Guide
+﻿# Adoption Guide
 
 For IT teams introducing this protocol into a workspace where developers use
 [Claude Code](https://claude.ai/code) for enterprise DevOps tasks.
@@ -20,7 +20,7 @@ For IT teams introducing this protocol into a workspace where developers use
 - Write access to `~/.claude/` and the current workspace.
 
 Optional but recommended:
-- `shellcheck` (for static analysis of Bash) — the hooks and scripts pass shellcheck clean.
+- `shellcheck` (for static analysis of Bash) â€” the hooks and scripts pass shellcheck clean.
 - `gitleaks` (for CI secret scanning).
 
 ## Installation
@@ -38,11 +38,11 @@ bash scripts/install.sh             # actually install
 
 Fork this repo internally, then adapt:
 
-1. **Customise `rules/clinerules.template`** — remove/add rules to match your compliance regime (SOX, HIPAA, GDPR, PCI-DSS, ISO 27001 §A.14.2.5).
+1. **Customise `rules/clinerules.template`** â€” remove/add rules to match your compliance regime (SOX, HIPAA, GDPR, PCI-DSS, ISO 27001 Â§A.14.2.5).
 2. **Distribute** via internal package (Chocolatey/Homebrew tap/deb repo) or a bootstrap script pinned to your fork.
-3. **Enforce via CI** — copy `.github/workflows/validate.yml` into your governance repo; block PRs that modify rules without approval.
-4. **Central audit ingest** — replace the local `~/.claude/telemetry/audit.jsonl` sink with a POST to your SIEM (Splunk HEC, Elastic, Datadog). See `docs/ARCHITECTURE.md` §Audit.
-5. **Onboarding** — each developer runs `bash scripts/install.sh` once per workstation; the installer is idempotent.
+3. **Enforce via CI** â€” copy `.github/workflows/validate.yml` into your governance repo; block PRs that modify rules without approval.
+4. **Central audit ingest** â€” replace the local `~/.claude/telemetry/audit.jsonl` sink with a POST to your SIEM (Splunk HEC, Elastic, Datadog). See `docs/ARCHITECTURE.md` Â§Audit.
+5. **Onboarding** â€” each developer runs `bash scripts/install.sh` once per workstation; the installer is idempotent.
 
 ## Verification post-install
 
@@ -52,11 +52,11 @@ bash scripts/validate.sh
 
 Expected output:
 ```
-✅ Rule count invariant   : 19/19
-✅ Hooks executable       : 2/2
-✅ Hooks self-test        : 18/18
-✅ settings.json syntax   : valid
-✅ No secrets in tracked files
+âœ… Rule count invariant   : 19/19
+âœ… Hooks executable       : 2/2
+âœ… Hooks self-test        : 18/18
+âœ… settings.json syntax   : valid
+âœ… No secrets in tracked files
 ```
 
 ## Break-glass procedure
@@ -66,12 +66,12 @@ The two structural hooks block sensitive operations by default. To perform one:
 ```bash
 # Modify a governance file (RULE-017 scope):
 touch ~/.claude/.policy-unlock
-# → next single Write/Edit on .clinerules / enterprise_protocol.md / settings.json is allowed
-# → token is auto-consumed; subsequent edits are blocked again
+# â†’ next single Write/Edit on .clinerules / enterprise_protocol.md / settings.json is allowed
+# â†’ token is auto-consumed; subsequent edits are blocked again
 
 # Run a destructive command (RULE-012 scope):
 touch ~/.claude/.destructive-unlock
-# → next single rm -rf / git push --force / DROP DATABASE / ... is allowed
+# â†’ next single rm -rf / git push --force / DROP DATABASE / ... is allowed
 ```
 
 Both events are logged to `~/.claude/telemetry/audit.jsonl` with a correlation ID.
@@ -102,6 +102,7 @@ Restores backups saved during install (`~/.claude/backups/install-<timestamp>/`)
 
 ## Support
 
-- Questions → open a discussion (or issue with the `question` label).
-- Bugs → **Bug Report** issue template.
-- Security → see `SECURITY.md` (private advisory).
+- Questions â†’ open a discussion (or issue with the `question` label).
+- Bugs â†’ **Bug Report** issue template.
+- Security â†’ see `SECURITY.md` (private advisory).
+

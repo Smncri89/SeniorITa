@@ -1,4 +1,4 @@
-# Pull Request
+﻿# Pull Request
 
 ## What
 <!-- One-line summary -->
@@ -17,7 +17,7 @@
 - **Dependencies**:
 
 ## Debate (RULE-008)
-<!-- If ≥2 approaches were viable, briefly justify the choice -->
+<!-- If â‰¥2 approaches were viable, briefly justify the choice -->
 
 ## Checklist
 - [ ] `bash scripts/validate.sh` passes locally
@@ -25,3 +25,4 @@
 - [ ] `CHANGELOG.md` updated
 - [ ] `PROTOCOL.md` version bumped (if governance behaviour changed)
 - [ ] No secrets or PII introduced
+

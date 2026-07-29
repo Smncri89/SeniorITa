@@ -1,4 +1,4 @@
-name: Rule Proposal
+﻿name: Rule Proposal
 description: Propose a new RULE-NNN or modification to an existing rule
 title: "[RULE] "
 labels: [rule-proposal]
@@ -47,3 +47,4 @@ body:
     id: rollback
     attributes:
       label: Rollback procedure if the rule is later removed
+

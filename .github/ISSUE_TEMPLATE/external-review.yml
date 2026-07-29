@@ -1,4 +1,4 @@
-name: External Review
+﻿name: External Review
 description: Submit a peer review of the protocol (human or LLM reviewer)
 title: "[Review] "
 labels: [review]
@@ -31,9 +31,9 @@ body:
     id: critical_findings
     attributes:
       label: Critical findings
-      description: One finding per bullet — include suggested remediation
+      description: One finding per bullet â€” include suggested remediation
       placeholder: |
-        - Finding: ... → Remediation: ...
+        - Finding: ... â†’ Remediation: ...
     validations:
       required: true
   - type: textarea
@@ -56,3 +56,4 @@ body:
     attributes:
       label: Structural vs behavioural
       description: Is v4's structural enforcement meaningful, or theatre?
+

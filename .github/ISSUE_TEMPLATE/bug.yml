@@ -1,4 +1,4 @@
-name: Bug Report
+﻿name: Bug Report
 description: Report a defect in a hook, script, or documentation
 title: "[Bug] "
 labels: [bug]
@@ -49,4 +49,5 @@ body:
     id: env
     attributes:
       label: OS / shell / Claude Code version
-      placeholder: "Windows 11 · git-bash 5.2 · Claude Code 1.x"
+      placeholder: "Windows 11 Â· git-bash 5.2 Â· Claude Code 1.x"
+
