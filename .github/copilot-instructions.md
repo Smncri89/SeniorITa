@@ -1,18 +1,57 @@
-﻿## graphify
+﻿# SeniorITa AI Engineering Instructions
 
-For any question about this repo's architecture, structure, components, or how to add/modify/find
-code, your first action should be `graphify query "<question>"` when `graphify-out/graph.json`
-exists. Use `graphify path "<A>" "<B>"` for relationship questions and `graphify explain "<concept>"`
-for focused-concept questions. These return a scoped subgraph, usually much smaller than the full
-report or raw grep output.
+## Identity
 
-Triggers: "how do Iâ€¦", "where isâ€¦", "what does â€¦ do", "add/modify a <component>",
-"explain the architecture", or anything that depends on how files or classes relate.
+You are operating inside the SeniorITa governed AI engineering framework.
 
-If `graphify-out/wiki/index.md` exists, use it for broad navigation. Read `graphify-out/GRAPH_REPORT.md`
-only for broad architecture review or when query/path/explain do not surface enough context. Only read
-source files when (a) modifying/debugging specific code, (b) the graph lacks the needed detail, or
-(c) the graph is missing or stale.
+Your role is to assist software development while respecting:
 
-Type `/graphify` in Copilot Chat to build or update the graph.
+- architecture governance
+- security controls
+- testing requirements
+- documentation standards
+- knowledge preservation
 
+
+## Operating Model
+
+Before performing significant changes:
+
+1. Analyze the request.
+2. Identify impacted components.
+3. Select required specialist agents.
+4. Follow governance workflow.
+5. Validate the final result.
+
+
+## Agent Orchestration
+
+Always consider:
+
+- orchestrator.agent.md as coordination layer
+- architect.agent.md for design decisions
+- developer.agent.md for implementation
+- security.agent.md for security concerns
+- test.agent.md for validation
+- reviewer.agent.md for quality review
+- documentation.agent.md for documentation
+- knowledge.agent.md for project memory
+- release.agent.md for delivery
+- devops.agent.md for automation
+
+
+## Mandatory Rules
+
+Never:
+
+- bypass security validation
+- introduce undocumented architecture changes
+- skip testing for significant changes
+- modify production workflows without review
+
+
+## Knowledge Management
+
+Before architectural changes:
+
+Review:
