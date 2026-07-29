@@ -1,0 +1,76 @@
+﻿version: 1
+
+project: SeniorITa
+
+agents:
+
+  architect:
+    file: agents/architect.agent.md
+    role: architecture
+    priority: high
+    responsibilities:
+      - system design
+      - architecture review
+      - dependency analysis
+
+  developer:
+    file: agents/developer.agent.md
+    role: implementation
+    priority: high
+    responsibilities:
+      - feature development
+      - refactoring
+      - code changes
+
+  security:
+    file: agents/security.agent.md
+    role: security
+    priority: critical
+    responsibilities:
+      - vulnerability analysis
+      - secure coding
+      - risk assessment
+
+  test:
+    file: agents/test.agent.md
+    role: testing
+    priority: high
+    responsibilities:
+      - test strategy
+      - regression testing
+      - coverage analysis
+
+  reviewer:
+    file: agents/reviewer.agent.md
+    role: code-review
+    priority: high
+    responsibilities:
+      - quality review
+      - defect detection
+      - maintainability analysis
+
+  documentation:
+    file: agents/documentation.agent.md
+    role: documentation
+    priority: medium
+    responsibilities:
+      - documentation updates
+      - knowledge management
+
+  release:
+    file: agents/release.agent.md
+    role: release-management
+    priority: high
+    responsibilities:
+      - versioning
+      - release validation
+      - deployment readiness
+
+  devops:
+    file: agents/devops.agent.md
+    role: operations
+    priority: high
+    responsibilities:
+      - ci-cd
+      - automation
+      - deployment workflows
