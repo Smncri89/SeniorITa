@@ -1,0 +1,58 @@
+﻿version: 1
+
+project: SeniorITa
+
+governance:
+
+  workflow:
+    - architect
+    - developer
+    - test
+    - security
+    - reviewer
+    - documentation
+    - release
+
+  mandatory_checks:
+    architecture_review: true
+    security_review: true
+    test_validation: true
+    documentation_update: true
+
+  quality_gates:
+
+    development:
+      required:
+        - developer
+        - test
+
+    merge:
+      required:
+        - reviewer
+        - security
+
+    release:
+      required:
+        - release
+        - devops
+
+  rules:
+
+    - "No production change without review"
+    - "No critical security issue ignored"
+    - "No feature without validation"
+    - "Architecture decisions must be documented"
+
+  escalation:
+
+    security:
+      priority: critical
+      agent: security
+
+    architecture:
+      priority: high
+      agent: architect
+
+    release:
+      priority: high
+      agent: release
