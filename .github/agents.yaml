@@ -84,3 +84,13 @@ agents:
       - workflow coordination
       - governance enforcement
       - multi-agent orchestration
+
+  knowledge:
+    file: agents/knowledge.agent.md
+    role: knowledge-management
+    priority: medium
+    responsibilities:
+      - technical knowledge management
+      - architecture memory
+      - ADR management
+      - project context preservation
