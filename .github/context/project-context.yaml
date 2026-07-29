@@ -1,0 +1,86 @@
+version: 1
+
+project:
+  name: SeniorITa
+  description: >
+    AI assisted engineering framework with governed
+    multi-agent software development workflow.
+
+purpose:
+  - Improve software engineering quality.
+  - Enable AI assisted development.
+  - Maintain architectural consistency.
+  - Enforce security and quality controls.
+
+architecture:
+
+  approach:
+    - modular
+    - agent-based
+    - governance-driven
+
+  ai_framework:
+    orchestrator: enabled
+    specialist_agents: enabled
+    governance_layer: enabled
+    knowledge_layer: enabled
+
+agents:
+
+  total: 10
+
+  categories:
+    architecture:
+      - architect
+
+    development:
+      - developer
+
+    quality:
+      - test
+      - reviewer
+
+    security:
+      - security
+
+    operations:
+      - devops
+      - release
+
+    knowledge:
+      - documentation
+      - knowledge
+
+    coordination:
+      - orchestrator
+
+engineering_principles:
+
+  - Clean Code
+  - SOLID
+  - Secure Development
+  - Automated Validation
+  - Documentation First
+  - Continuous Improvement
+
+mandatory_rules:
+
+  - Every significant change requires validation.
+  - Security must be considered before release.
+  - Architecture decisions must be documented.
+  - Knowledge must be preserved.
+
+tools:
+
+  architecture_analysis:
+    graphify: enabled
+
+  version_control:
+    git: enabled
+
+  automation:
+    github_actions: enabled
+
+status:
+  phase: AI Governance Foundation
+  maturity: initial
