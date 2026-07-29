@@ -1,0 +1,19 @@
+version: 1
+
+architecture:
+
+  principles:
+    - SOLID
+    - DRY
+    - KISS
+    - Clean Architecture
+
+  required:
+    - dependency_review
+    - architecture_validation
+    - documentation_update
+
+  forbidden:
+    - circular_dependencies
+    - hidden_coupling
+    - undocumented_interfaces

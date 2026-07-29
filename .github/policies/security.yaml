@@ -1,0 +1,29 @@
+version: 1
+
+security:
+
+  mandatory:
+    - secret_scanning
+    - dependency_scan
+    - code_review
+    - test_validation
+
+  forbidden:
+    - hardcoded_secrets
+    - plaintext_passwords
+    - disabled_authentication
+    - insecure_random
+
+  severity:
+
+    critical:
+      action: block
+
+    high:
+      action: require_review
+
+    medium:
+      action: warning
+
+    low:
+      action: log

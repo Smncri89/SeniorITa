@@ -1,0 +1,13 @@
+version: 1
+
+documentation:
+
+  required:
+    - update_readme
+    - update_adr
+    - update_context
+
+  standards:
+    markdown: true
+    adr: true
+    changelog: true

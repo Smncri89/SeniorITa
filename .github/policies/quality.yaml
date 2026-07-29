@@ -1,0 +1,15 @@
+version: 1
+
+quality:
+
+  coverage:
+    minimum: 80
+
+  review:
+    required: true
+
+  lint:
+    required: true
+
+  formatting:
+    required: true

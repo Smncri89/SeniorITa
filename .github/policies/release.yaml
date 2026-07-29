@@ -1,0 +1,11 @@
+version: 1
+
+release:
+
+  required:
+    - tests_passed
+    - review_completed
+    - security_passed
+    - documentation_updated
+
+  semantic_versioning: true
