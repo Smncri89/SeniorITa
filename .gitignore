@@ -29,3 +29,7 @@ graphify-out/
 # Local project structure exports
 structure.txt
 tree.txt
+
+.venv/
+__pycache__/
+*.pyc
