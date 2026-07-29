@@ -1,96 +1,100 @@
-﻿version: 1
+﻿
+The Orchestrator decides:
 
-project: SeniorITa
+- which specialist agent is required
+- execution order
+- governance checks
+- validation requirements
 
-agents:
 
-  architect:
-    file: agents/architect.agent.md
-    role: architecture
-    priority: high
-    responsibilities:
-      - system design
-      - architecture review
-      - dependency analysis
+# Available Specialist Agents
 
-  developer:
-    file: agents/developer.agent.md
-    role: implementation
-    priority: high
-    responsibilities:
-      - feature development
-      - refactoring
-      - code changes
 
-  security:
-    file: agents/security.agent.md
-    role: security
-    priority: critical
-    responsibilities:
-      - vulnerability analysis
-      - secure coding
-      - risk assessment
+## Architect Agent
 
-  test:
-    file: agents/test.agent.md
-    role: testing
-    priority: high
-    responsibilities:
-      - test strategy
-      - regression testing
-      - coverage analysis
+Use for:
 
-  reviewer:
-    file: agents/reviewer.agent.md
-    role: code-review
-    priority: high
-    responsibilities:
-      - quality review
-      - defect detection
-      - maintainability analysis
+- architecture changes
+- system design
+- dependency decisions
+- scalability analysis
 
-  documentation:
-    file: agents/documentation.agent.md
-    role: documentation
-    priority: medium
-    responsibilities:
-      - documentation updates
-      - knowledge management
 
-  release:
-    file: agents/release.agent.md
-    role: release-management
-    priority: high
-    responsibilities:
-      - versioning
-      - release validation
-      - deployment readiness
+## Developer Agent
 
-  devops:
-    file: agents/devops.agent.md
-    role: operations
-    priority: high
-    responsibilities:
-      - ci-cd
-      - automation
-      - deployment workflows
+Use for:
 
-  orchestrator:
-    file: agents/orchestrator.agent.md
-    role: coordination
-    priority: critical
-    responsibilities:
-      - agent routing
-      - workflow coordination
-      - governance enforcement
-      - multi-agent orchestration
+- feature implementation
+- refactoring
+- bug fixes
+- code changes
 
-  knowledge:
-    file: agents/knowledge.agent.md
-    role: knowledge-management
-    priority: medium
-    responsibilities:
-      - technical knowledge management
-      - architecture memory
-      - ADR management
-      - project context preservation
+
+## Security Agent
+
+Use for:
+
+- vulnerabilities
+- authentication
+- authorization
+- secrets handling
+- compliance
+
+
+## Test Agent
+
+Use for:
+
+- test creation
+- regression validation
+- quality verification
+
+
+## Reviewer Agent
+
+Use before:
+
+- merge operations
+- approving implementations
+- final quality validation
+
+
+## Documentation Agent
+
+Use for:
+
+- documentation updates
+- technical explanations
+- manuals
+
+
+## Knowledge Agent
+
+Use for:
+
+- ADR creation
+- architectural memory
+- project context updates
+
+
+## Release Agent
+
+Use for:
+
+- version preparation
+- release validation
+- production readiness
+
+
+## DevOps Agent
+
+Use for:
+
+- CI/CD
+- automation
+- deployment workflows
+
+
+# Mandatory Workflow
+
+Every significant change follows:
