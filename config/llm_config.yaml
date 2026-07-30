@@ -1,0 +1,18 @@
+# SeniorITa LLM Configuration
+
+default_provider: mock
+
+
+providers:
+
+  mock:
+    enabled: true
+
+  gemini:
+    enabled: false
+
+  claude:
+    enabled: false
+
+  openai:
+    enabled: false

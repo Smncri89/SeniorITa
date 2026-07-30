@@ -1,100 +1,85 @@
-﻿
-The Orchestrator decides:
+﻿agents:
 
-- which specialist agent is required
-- execution order
-- governance checks
-- validation requirements
-
-
-# Available Specialist Agents
-
-
-## Architect Agent
-
-Use for:
-
-- architecture changes
-- system design
-- dependency decisions
-- scalability analysis
+  - name: architect
+    role: architecture
+    model: seniorita-qwen
+    file: agents/architect.agent.md
+    capabilities:
+      - system_design
+      - architecture_changes
+      - scalability_analysis
 
 
-## Developer Agent
-
-Use for:
-
-- feature implementation
-- refactoring
-- bug fixes
-- code changes
-
-
-## Security Agent
-
-Use for:
-
-- vulnerabilities
-- authentication
-- authorization
-- secrets handling
-- compliance
+  - name: developer
+    role: implementation
+    model: qwen2.5-coder:7b
+    file: agents/developer.agent.md
+    capabilities:
+      - feature_development
+      - refactoring
+      - bug_fixing
 
 
-## Test Agent
-
-Use for:
-
-- test creation
-- regression validation
-- quality verification
-
-
-## Reviewer Agent
-
-Use before:
-
-- merge operations
-- approving implementations
-- final quality validation
+  - name: security
+    role: security
+    model: seniorita-qwen
+    file: agents/security.agent.md
+    capabilities:
+      - vulnerability_analysis
+      - authentication
+      - compliance
 
 
-## Documentation Agent
-
-Use for:
-
-- documentation updates
-- technical explanations
-- manuals
-
-
-## Knowledge Agent
-
-Use for:
-
-- ADR creation
-- architectural memory
-- project context updates
+  - name: test
+    role: validation
+    model: qwen2.5:3b
+    file: agents/test.agent.md
+    capabilities:
+      - test_creation
+      - regression_validation
 
 
-## Release Agent
-
-Use for:
-
-- version preparation
-- release validation
-- production readiness
-
-
-## DevOps Agent
-
-Use for:
-
-- CI/CD
-- automation
-- deployment workflows
+  - name: reviewer
+    role: review
+    model: seniorita-qwen
+    file: agents/reviewer.agent.md
+    capabilities:
+      - code_review
+      - merge_validation
 
 
-# Mandatory Workflow
+  - name: documentation
+    role: documentation
+    model: qwen2.5:3b
+    file: agents/documentation.agent.md
+    capabilities:
+      - manuals
+      - technical_docs
 
-Every significant change follows:
+
+  - name: knowledge
+    role: memory
+    model: qwen2.5:3b
+    file: agents/knowledge.agent.md
+    capabilities:
+      - adr
+      - project_context
+
+
+  - name: release
+    role: release
+    model: seniorita-qwen
+    file: agents/release.agent.md
+    capabilities:
+      - version_validation
+      - production_readiness
+
+
+  - name: devops
+    role: operations
+    model: qwen2.5-coder:7b
+    file: agents/devops.agent.md
+    capabilities:
+      - cicd
+      - automation
+      - deployment

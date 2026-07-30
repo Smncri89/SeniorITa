@@ -1,0 +1,21 @@
+workflow:
+
+  - agent: security
+    provider: ollama
+    model: seniorita-qwen
+
+  - agent: developer
+    provider: coder
+    model: qwen2.5-coder:7b
+
+  - agent: reviewer
+    provider: ollama
+    model: seniorita-qwen
+
+  - agent: test
+    provider: coder
+    model: qwen2.5-coder:7b
+
+  - agent: documentation
+    provider: ollama
+    model: seniorita-qwen
