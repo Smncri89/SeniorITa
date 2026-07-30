@@ -1,150 +1,58 @@
 # -*- coding: utf-8 -*-
 
-from engine.registry import AgentRegistry
+from engine.planner import Planner
 from engine.workflow import WorkflowEngine
 from engine.workflow_runner import WorkflowRunner
+from engine.model_router import ModelRouter
+from engine.providers.provider_factory import ProviderFactory
 
 
 class Orchestrator:
 
-
     def __init__(self):
 
-        self.registry = AgentRegistry()
+        self.planner = Planner()
         self.workflow = WorkflowEngine()
         self.runner = WorkflowRunner()
 
-
-
-    def analyze_request(self, request):
-
-        request = request.lower()
-
-
-        rules = {
-
-            "security": [
-                "vulnerabilità",
-                "security",
-                "sicurezza",
-                "authentication",
-                "token",
-                "api"
-            ],
-
-            "developer": [
-                "bug",
-                "errore",
-                "feature",
-                "sviluppo",
-                "codice",
-                "refactoring"
-            ],
-
-            "devops": [
-                "deploy",
-                "pipeline",
-                "ci/cd",
-                "automazione",
-                "deployment"
-            ],
-
-            "test": [
-                "test",
-                "qualità",
-                "regressione",
-                "validation"
-            ],
-
-            "documentation": [
-                "documentazione",
-                "manuale",
-                "readme",
-                "document"
-            ],
-
-            "architect": [
-                "architettura",
-                "design",
-                "scalabilità",
-                "sistema"
-            ]
-
-        }
-
-
-        for agent_name, keywords in rules.items():
-
-            for keyword in keywords:
-
-                if keyword in request:
-
-                    return self.registry.get_agent(agent_name)
-
-
-        return self.registry.get_agent("architect")
-
-
-
-    def determine_workflow(self, request):
-
-        request = request.lower()
-
-
-        if any(word in request for word in [
-            "vulnerabilità",
-            "security",
-            "sicurezza",
-            "authentication",
-            "token",
-            "api"
-        ]):
-
-            return "security_fix"
-
-
-
-        if any(word in request for word in [
-            "feature",
-            "sviluppo",
-            "nuova funzionalità",
-            "codice",
-            "refactoring"
-        ]):
-
-            return "feature_development"
-
-
-
-        if any(word in request for word in [
-            "deploy",
-            "pipeline",
-            "ci/cd",
-            "automazione",
-            "deployment"
-        ]):
-
-            return "deployment"
-
-
-
-        return "standard"
-
-
+        # Nuovi componenti AI
+        self.router = ModelRouter()
 
     def handle_request(self, request):
 
+        # ==========================
+        # ANALISI DELLA RICHIESTA
+        # ==========================
 
-        agent = self.analyze_request(request)
+        plan = self.planner.plan(request)
+
+        agent = plan["agent"]
+
+        analysis = plan["analysis"]
 
 
-        workflow_name = self.determine_workflow(request)
+        # ==========================
+        # ROUTING DEL MODELLO AI
+        # ==========================
 
-
-        workflow = self.workflow.get_workflow(
-            workflow_name
+        ai = self.router.select_model(
+            request=request,
+            agent=agent
         )
 
+
+        # ==========================
+        # WORKFLOW
+        # ==========================
+
+        workflow = self.workflow.get_workflow(
+            analysis["workflow"]
+        )
+
+
+        # ==========================
+        # ESECUZIONE WORKFLOW
+        # ==========================
 
         execution = self.runner.run(
             workflow,
@@ -152,18 +60,35 @@ class Orchestrator:
         )
 
 
+        # ==========================
+        # OUTPUT
+        # ==========================
+
         return {
 
             "request": request,
 
-            "initial_agent": agent["name"],
+            "analysis": analysis,
 
-            "role": agent["role"],
-
-            "capabilities": agent["capabilities"],
+            "agent": agent,
 
             "workflow": workflow,
+
+            "selected_ai": ai,
 
             "execution": execution
 
         }
+
+
+    def create_provider(self, provider, model=None):
+        """
+        Factory centralizzata.
+        In futuro verrà usata per fallback,
+        retry e load balancing.
+        """
+
+        return ProviderFactory.create(
+            provider,
+            model
+        )S

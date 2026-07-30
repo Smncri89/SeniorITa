@@ -21,7 +21,11 @@ class CoderProvider:
             json={
                 "model": self.model,
                 "prompt": prompt,
-                "stream": False
+                "stream": False,
+"options": {
+    "num_predict": 512,
+    "temperature": 0.2
+}
             },
             timeout=300
         )

@@ -20,16 +20,24 @@ class SecretsManager:
 
 
 
-    def get_claude_key(self):
+    def get_kimi_key(self):
 
         return os.getenv(
-            "CLAUDE_API_KEY"
+            "KIMI_API_KEY"
         )
 
 
 
-    def get_openai_key(self):
+    def get_groq_key(self):
 
         return os.getenv(
-            "OPENAI_API_KEY"
+            "GROQ_API_KEY"
+        )
+
+
+
+    def get_xai_key(self):
+
+        return os.getenv(
+            "XAI_API_KEY"
         )

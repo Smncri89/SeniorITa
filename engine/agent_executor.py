@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 
 from engine.providers.provider_factory import ProviderFactory
-from engine.prompt_loader import PromptLoader
+from engine.model_router import ModelRouter
 
 
 class AgentExecutor:
 
-    def __init__(
-        self,
-        provider="ollama"
-    ):
-        self.provider_name = provider
+
+    def __init__(self):
+
+        self.router = ModelRouter()
+
+
 
     def execute(
         self,
@@ -18,47 +19,89 @@ class AgentExecutor:
         request
     ):
 
-        model = agent.get("model")
+
+        # Selezione automatica modello
+
+        routing = self.router.select_model(
+            request,
+            agent
+        )
+
+
+        provider_name = routing["provider"]
+
+        model = routing["model"]
+
+
 
         provider = ProviderFactory.create(
-            self.provider_name,
+            provider_name,
             model
         )
 
-        system_prompt = PromptLoader.load(
-            agent["file"]
-        )
+
 
         prompt = f"""
-{system_prompt}
 
-----------------------------------------------------
+Rispondi sempre in lingua italiana.
 
-User request:
+Sei un agente AI enterprise.
+
+Ruolo agente:
+
+{agent['role']}
+
+
+Nome agente:
+
+{agent['name']}
+
+
+Capacità:
+
+{agent['capabilities']}
+
+
+Richiesta utente:
 
 {request}
 
-----------------------------------------------------
 
-Follow all the instructions above.
+Modello utilizzato:
 
-Think step by step.
+{model}
 
-Produce enterprise-grade output.
 
-If code is required:
-- explain choices
-- provide complete code
-- highlight risks
+Motivo scelta:
+
+{routing['reason']}
+
+
+Fornisci una risposta professionale,
+tecnica e strutturata.
+
+Usa esempi pratici quando utili.
+
+
 """
 
-        llm_result = provider.generate(prompt)
+
+
+        response = provider.generate(
+            prompt
+        )
+
 
         return {
+
             "agent": agent["name"],
-            "provider": llm_result["provider"],
-            "model": llm_result["model"],
-            "request": request,
-            "instructions_loaded": True,
-            "llm_response": llm_result
+
+            "provider": provider_name,
+
+            "model": model,
+
+            "model_reason": routing["reason"],
+
+            "response": response
+
         }
