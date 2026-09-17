@@ -13,7 +13,7 @@ if (Test-Path "$ProjectRoot\.env.local") {
             [System.Environment]::SetEnvironmentVariable($matches[1].Trim(), $matches[2].Trim(), "Process")
         }
     }
-    Write-Host "--> Variabili di ambiente caricate da .env.local" -ForegroundColor Green
+    Write-Host "--> Variabili caricate da .env.local" -ForegroundColor Green
 }
 
 Write-Host "🔍 [1/3] Scansione ed ingestione log..." -ForegroundColor Cyan
@@ -34,7 +34,7 @@ Write-Host "🚀 [3/3] Sincronizzazione con GitHub..." -ForegroundColor Cyan
 if (Test-Path "$ProjectRoot\.git") {
     git add .
     $today = Get-Date -Format "yyyy-MM-dd HH:mm"
-    git commit -m "feat(seniorita): portable auto-update kb, logs & graph report ($today)"
+    git commit -m "feat(seniorita): portable launcher & dynamic paths for C:\ and USB ($today)"
     git push origin main
 }
 Write-Host "=== [SeniorITa] Aggiornamento Completato con Successo! ===" -ForegroundColor Green
