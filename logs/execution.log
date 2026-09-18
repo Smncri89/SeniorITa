@@ -1,0 +1,332 @@
+2026-09-17 14:36:37,283 - ERROR - Errore Gemini API HTTP: 404 - {
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.",
+    "status": "NOT_FOUND"
+  }
+}
+
+2026-09-17 14:38:13,281 - ERROR - Errore Gemini API HTTP: 404 - {
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.",
+    "status": "NOT_FOUND"
+  }
+}
+
+2026-09-17 14:38:25,371 - ERROR - Errore Gemini API HTTP: 404 - {
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.",
+    "status": "NOT_FOUND"
+  }
+}
+
+2026-09-17 14:39:45,560 - INFO - Esecuzione script:
+# ==============================================================================
+# SCRIPT DI SCANSIONE RETE LAN/WI-FI E STATO VPN (POWERSHELL 5.1)
+# ==============================================================================
+
+# --- CONFIGURAZIONE PERCORSI ED FILE ---
+$DesktopPath = [Environment]::GetFolderPath('Desktop')
+$FileBase = Join-Path -Path $DesktopPath -ChildPath "Report_Rete_VPN_$(Get-Date -Format 'yyyyMMdd_HHmmss')"
+$CacheFile = Join-Path -Path $env:TEMP -ChildPath "mac_oui_cache.json"
+
+# --- GESTIONE CACHE OUI MAC VENDOR ---
+$MacCache = @{}
+if (Test-Path -Path $CacheFile) {
+    try {
+        $CacheJson = Get-Content -Path $CacheFile -Raw | ConvertFrom-Json
+        foreach ($Prop in $CacheJson.PSObject.Properties) {
+            $MacCache[$Prop.Name] = $Prop.Value
+        }
+    } catch {}
+}
+
+function Get-MacVendor {
+    param (
+        [string]$MacAddress
+    )
+    if ([string]::IsNullOrWhiteSpace($MacAddress) -or $MacAddress -eq "N/A") { return "N/A" }
+    
+    $CleanMac = ($MacAddress -replace "[:-]", "").ToUpper()
+    if ($CleanMac.Length -lt 6) { return "Sconosciuto" }
+    $Oui = $CleanMac.Substring(0, 6)
+
+    if ($MacCache.ContainsKey($Oui)) {
+        return $MacCache[$Oui]
+    }
+
+    $Vendor = "Sconosciuto"
+    try {
+        $Uri = "https://api.macvendors.com/$Oui"
+        $Response = Invoke-RestMethod -Uri $Uri -Method Get -TimeoutSec 2 -ErrorAction Stop
+        if ($Response) { $Vendor = $Response.Trim() }
+    } catch {
+        $Vendor = "Sconosciuto"
+    }
+
+    $MacCache[$Oui] = $Vendor
+    try {
+        $MacCache | ConvertTo-Json | Set-Content -Path $CacheFile -Force
+    } catch {}
+
+    return $Vendor
+}
+
+# --- 1. RILEVAMENTO E SCANSIONE RETE (PING SWEEP ASINCRONO) ---
+$ActiveIPs = Get-NetIPAddress -AddressFamily IPv4 -ErrorAction SilentlyContinue | Where-Object {
+    $_.IPAddress -notlike "127.*" -and $_.IPAddress -notlike "169.254.*" -and $_.SkipAsSource -ne $true
+}
+
+foreach ($IPObj in $ActiveIPs) {
+    $Octets = $IPObj.IPAddress.Split('.')
+    if ($Octets.Count -eq 4) {
+        $Subnet = "$($Octets[0]).$($Octets[1]).$($Octets[2])"
+        1..254 | ForEach-Object {
+            $Ping = New-Object System.Net.NetworkInformation.Ping
+            [void]$Ping.SendAsync("$Subnet.$_", 80)
+        }
+    }
+}
+Start-Sleep -Seconds 2
+
+# --- 2. RACCOLTA DISPOSITIVI CONNESSI DA TABELLA ARP / NEIGHBOR ---
+$Neighbors = Get-NetNeighbor -AddressFamily IPv4 -ErrorAction SilentlyContinue | Where-Object {
+    $_.State -in 'Reachable','Stale','Delay','Probe' -and
+    $_.IPAddress -notlike "127.*" -and
+    $_.IPAddress -notlike "169.254.*" -and
+    $_.IPAddress -notlike "224.*" -and
+    $_.IPAddress -notlike "239.*" -and
+    $_.IPAddress -ne "255.255.255.255"
+}
+
+$DispositiviRete = @()
+foreach ($N in $Neighbors) {
+    $IP = $N.IPAddress
+    $MAC = $N.LinkLayerAddress
+    if ([string]::IsNullOrWhiteSpace($MAC) -or $MAC -eq "00-00-00-00-00-00") { continue }
+
+    # Risoluzione HostName via DNS Locale
+    $HostName = "N/A"
+    try {
+        $DNS = [System.Net.Dns]::GetHostEntry($IP)
+        if ($DNS.HostName) { $HostName = $DNS.HostName }
+    } catch {
+        $HostName = "Sconosciuto"
+    }
+
+    # Nome Interfaccia
+    $InterfaceAlias = $N.InterfaceAlias
+    if (-not $InterfaceAlias) {
+        $InterfaceAlias = (Get-NetAdapter -InterfaceIndex $N.InterfaceIndex -ErrorAction SilentlyContinue).Name
+    }
+
+    # Ricerca Produttore MAC
+    $Vendor = Get-MacVendor -MacAddress $MAC
+
+    $DispositiviRete += [PSCustomObject]@{
+        IPAddress   = $IP
+        HostName    = $HostName
+        MACAddress  = $MAC
+        Produttore  = $Vendor
+        Interfaccia = $InterfaceAlias
+        Stato       = $N.State
+    }
+}
+
+# --- 3. CONTROLLO CONNESSIONI VPN E SCHEDE VIRTUALI/TUNNEL ---
+$ConnessioniVPN = @()
+
+# Client VPN di Windows (RAS)
+try {
+    $VpnList = Get-VpnConnection -ErrorAction SilentlyContinue
+    foreach ($Vpn in $VpnList) {
+        $ConnessioniVPN += [PSCustomObject]@{
+            Nome        = $Vpn.Name
+            Tipo        = "Client VPN Windows (RAS)"
+            Stato       = $Vpn.ConnectionStatus
+            Server      = $Vpn.ServerAddress
+            Interfaccia = "N/A"
+        }
+    }
+} catch {}
+
+# Schede di rete Virtuali / Tunnel (WireGuard, OpenVPN, TAP, TUN, ecc.)
+$VirtualAdapters = Get-NetAdapter -ErrorAction SilentlyContinue | Where-Object {
+    $_.InterfaceDescription -match 'WireGuard|TAP|TUN|VPN|Cisco|Fortinet|Palo Alto|CheckPoint|NordVPN|Proton|OpenVPN|Virtual' -or
+    $_.Name -match 'WireGuard|TAP|TUN|VPN'
+}
+
+foreach ($Adapter in $VirtualAdapters) {
+    $ConnessioniVPN += [PSCustomObject]@{
+        Nome        = $Adapter.Name
+        Tipo        = "Interfaccia Tunnel/Virtuale ($($Adapter.InterfaceDescription))"
+        Stato       = $Adapter.Status
+        Server      = "N/A"
+        Interfaccia = $Adapter.InterfaceAlias
+    }
+}
+
+# --- 4. ESPORTAZIONE REPORT IN MOLTIPLICI FORMATI ---
+
+# 4.1 CSV
+$DispositiviRete | Export-Csv -Path "$FileBase.csv" -NoTypeInformation -Encoding UTF8
+
+# 4.2 JSON
+$ReportData = @{
+    DataScansione  = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss")
+    Dispositivi    = $DispositiviRete
+    ConnessioniVPN = $ConnessioniVPN
+}
+$ReportData | ConvertTo-Json -Depth 4 | Set-Content -Path "$FileBase.json" -Encoding UTF8
+
+# 4.3 XML
+$ReportData | Export-Clixml -Path "$FileBase.xml"
+
+# 4.4 TXT
+$TxtContent = @"
+===============================================================================
+REPORT SCANSIONE RETE E STATO VPN
+Data Scansione: $(Get-Date -Format 'dd/MM/yyyy HH:mm:ss')
+===============================================================================
+
+--- STATO CONNESSIONI VPN E TUNNEL VIRTUALI ---
+"@
+if ($ConnessioniVPN.Count -gt 0) {
+    $TxtContent += "`n" + ($ConnessioniVPN | Format-Table -AutoSize | Out-String)
+} else {
+    $TxtContent += "`nNessuna connessione VPN o scheda virtuale rilevata.`n"
+}
+
+$TxtContent += @"
+
+--- DISPOSITIVI CONNESSI ALLA RETE LAN / WI-FI ---
+"@
+if ($DispositiviRete.Count -gt 0) {
+    $TxtContent += "`n" + ($DispositiviRete | Format-Table -AutoSize | Out-String)
+} else {
+    $TxtContent += "`nNessun dispositivo rilevato nella rete locale.`n"
+}
+$TxtContent | Set-Content -Path "$FileBase.txt" -Encoding UTF8
+
+# 4.5 HTML
+$HtmlHeader = @"
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Report Scansione Rete e VPN</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; background-color: #f4f6f9; color: #333; }
+        h1 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 30px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; background-color: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #0056b3; color: white; text-transform: uppercase; font-size: 14px; }
+        tr:hover { background-color: #f1f1f1; }
+        .badge-up { background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold; }
+        .badge-down { background-color: #dc3545; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold; }
+        .info { font-size: 0.9em; color: #666; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Report Scansione Rete e Stato VPN</h1>
+    <p class="info">Generato il: $(Get-Date -Format 'dd/MM/yyyy HH:mm:ss')</p>
+    
+    <h2>Stato VPN e Interfaccie Virtuali</h2>
+"@
+
+if ($ConnessioniVPN.Count -gt 0) {
+    $HtmlVpnTable = $ConnessioniVPN | ConvertTo-Html -Fragment
+} else {
+    $HtmlVpnTable = "<p>Nessuna VPN o interfaccia tunnel attiva rilevata.</p>"
+}
+
+$HtmlDevicesHeader = "<h2>Dispositivi Rilevati in Rete</h2>"
+if ($DispositiviRete.Count -gt 0) {
+    $HtmlDevicesTable = $DispositiviRete | ConvertTo-Html -Fragment
+} else {
+    $HtmlDevicesTable = "<p>Nessun dispositivo attivo trovato nella rete locale.</p>"
+}
+
+$HtmlFooter = @"
+</body>
+</html>
+"@
+
+$HtmlFull = $HtmlHeader + $HtmlVpnTable + $HtmlDevicesHeader + $HtmlDevicesTable + $HtmlFooter
+$HtmlPath = "$FileBase.html"
+$HtmlFull | Set-Content -Path $HtmlPath -Encoding UTF8
+
+# --- 5. APERTURA AUTOMATICA REPORT HTML ---
+Start-Process -FilePath $HtmlPath
+2026-09-17 14:41:05,479 - INFO - Output completato con codice di uscita 0
+2026-09-17 14:46:41,663 - ERROR - Errore Gemini API HTTP: 503 - {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+
+2026-09-17 14:47:56,718 - ERROR - Errore Gemini API HTTP: 503 - {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+
+2026-09-17 14:50:14,720 - INFO - Esecuzione script:
+Clear-Host
+
+# Header
+Write-Host "==================================================" -ForegroundColor Cyan
+Write-Host "           REPORT METRICHE DI SISTEMA            " -ForegroundColor Cyan
+Write-Host "==================================================" -ForegroundColor Cyan
+Write-Host ""
+
+# 1. DISCHI RIGIDI
+Write-Host "[1] STATO DISCHI RIGIDI" -ForegroundColor Yellow
+$disks = Get-CimInstance -ClassName Win32_LogicalDisk -Filter "DriveType=3" | Select-Object DeviceID, VolumeName,
+    @{Name="Dimensione (GB)"; Expression={[math]::Round($_.Size / 1GB, 2)}},
+    @{Name="Spazio Libero (GB)"; Expression={[math]::Round($_.FreeSpace / 1GB, 2)}},
+    @{Name="Spazio Usato (GB)"; Expression={[math]::Round(($_.Size - $_.FreeSpace) / 1GB, 2)}},
+    @{Name="% Libera"; Expression={[math]::Round(($_.FreeSpace / $_.Size) * 100, 2)}}
+
+$disks | Format-Table -AutoSize | Out-String | Write-Host
+
+# 2. USO CPU E RAM
+Write-Host "[2] UTILIZZO RISORSE (CPU E RAM)" -ForegroundColor Yellow
+
+$os = Get-CimInstance -ClassName Win32_OperatingSystem
+$totalRamGB = [math]::Round($os.TotalVisibleMemorySize / 1MB, 2)
+$freeRamGB = [math]::Round($os.FreePhysicalMemory / 1MB, 2)
+$usedRamGB = [math]::Round($totalRamGB - $freeRamGB, 2)
+$ramUsagePercent = [math]::Round(($usedRamGB / $totalRamGB) * 100, 2)
+
+$cpuLoad = (Get-CimInstance -ClassName Win32_Processor | Measure-Object -Property LoadPercentage -Average).Average
+
+$resourceTable = [PSCustomObject]@{
+    "Uso CPU (%)"       = "$cpuLoad %"
+    "RAM Totale (GB)"   = $totalRamGB
+    "RAM Usata (GB)"    = $usedRamGB
+    "RAM Libera (GB)"   = $freeRamGB
+    "Uso RAM (%)"       = "$ramUsagePercent %"
+}
+
+$resourceTable | Format-Table -AutoSize | Out-String | Write-Host
+
+# 3. TOP 5 PROCESSI PER MEMORIA
+Write-Host "[3] TOP 5 PROCESSI PER CONSUMO DI MEMORIA" -ForegroundColor Yellow
+
+$topProcesses = Get-Process | Sort-Object -Property WorkingSet64 -Descending | Select-Object -First 5 | Select-Object Id,
+    @{Name="Nome Processo"; Expression={$_.ProcessName}},
+    @{Name="Memoria (MB)"; Expression={[math]::Round($_.WorkingSet64 / 1MB, 2)}},
+    @{Name="Memoria (GB)"; Expression={[math]::Round($_.WorkingSet64 / 1GB, 2)}}
+
+$topProcesses | Format-Table -AutoSize | Out-String | Write-Host
+
+Write-Host "==================================================" -ForegroundColor Cyan
+2026-09-17 14:50:18,043 - INFO - Completato con codice 0
